@@ -1,7 +1,7 @@
-# This "script" will interpret a string into windows keyboard input; hotkey commands and/or typing text.
+# This "script" will interpret a string into windows keyboard input; hotkey commands and/or verbatim text typing.
 # It was designed with Google assistant output as the string provider in mind.
-# User's voice > Google Assistant > IFTTT (Tell my computer to... Pushbullet Version) > PushBullet > Push2Run > this script
 # Data chain:
+# User's voice > Google Assistant > IFTTT (Tell my computer to... Pushbullet Version) > PushBullet > Push2Run > this script
 # Direct key dictation (ex. "windows r") via google assistant is unreliable as it often misinterprests ("ex. windows are")
 # Thus althought it's somwhat capable, this is designed more to interpret colloquial english commands rather than execute spoken key commands (Ex. "minimize" rather than "alt space n")
 
@@ -9,26 +9,27 @@ from sys import exit, argv
 import random, re
 from difflib import get_close_matches
 from keypress_functions import sleep
-# all Key and Controller modules are loaded in accompanying keypress_functions.py file and were removed from this one for modularity.
 import keypress_functions as kf
-#import logging # no longer necessary after moving logging functions out to it's own "module" dee_logging
-import dee_logging as dl
+import dee_logging as dl # logging functions
 from os import system # for the _speak function
+import subprocess # replacing os.system for the _speak function
 
-# Set this "dbug" variable to 1 to see console output.  Set it to 0 to silence superfluous output.
+# Set this "dbug" variable to 1 to see console output (when run from a CLI).  Set it to 0 to silence superfluous output.
 dbug = 1 #(True) or 0 (False)
-# This variable sets the minimum logging level. Options: CRITICAL, ERROR, WARNING, INFO, DEBUG, or NOTSET.  NOTSET being the most verbose.
-# Although to be fair, I only use DEBUG and INFO in this script.
+# This variable sets the minimum logging level. Options: NOTSET, DEBUG, INFO, WARNING, ERROR, or CRITICAL.  NOTSET being the most verbose.
+# All log levels "above" the set level will also show.  Ex. If set to INFO, WARNING logs will also show.
 logging_level = dl.logging.INFO
 # This variable is just for testing purposing, skipping the data hand-off chain.  Set to None for the script to ignore it.
 testing_values = None # "change programs then type ABC and change programs and minimize" # <-- Test input
-# This variable fine tunes the mechanism I use to make my best guess as a last resort.
+# This variable adjusts the acceptable threshold within the mechanism I use to make my best interpretation guess as a last resort.
 # Any guess below this value won't be executed.
+# 0.54 seems to be the sweet spot
 guess_confidence_threshold = 0.54 # range:0 ~ 1.
-# Variable is to prevent console spamming for each dbugprint() call in case of logging failure.
+# Variable is here to prevent from spamming the console for each dbugprint() call in case of logging failure.
 logging_failed = False
 
-def dbugprint(string="", end="\n", logging_level="DEBUG"):
+def dbugprint(string="", logging_level="DEBUG", end="\n"):
+    """ Prints to console as well as logs to logfile. """
     try: dl.log(string, logging_level)
     except:
         # Apparently when I change the variable to True a few lines down, it changes the scope of the variable from global to just this function
@@ -38,7 +39,7 @@ def dbugprint(string="", end="\n", logging_level="DEBUG"):
         global logging_failed
         if not logging_failed:
             print("ERROR: Logging function failure.")
-            logging_failed = True # This "re-assignment" was giving me trouble and making the if statement a couple lines up fail.
+            logging_failed = True # This "re-assignment" was giving me trouble and making the if statement at the top of this block fail.
         None # logging is not strictly necessary so I've elected to do nothing if it fails
     if dbug: print(string, end=end)
 
@@ -92,7 +93,7 @@ SpecialKeys = {
     "mute"        : kf.Key.media_volume_mute,
     "right click" : kf.Key.menu, # doesn't quite fit in this dict but it hahs to go somewhere
 }
-# joining both dicts and sorting first by number of words in them, then by word length if previous condition is same
+# joining both dicts and sorting first by number of words, then by word length if previous condition is same
 sortedSpecialKeys = sorted({**commandKeys, **SpecialKeys}, key=lambda x: (len(x.split()), len(x)), reverse=True)
 possibleSingleLetterMisinterpretations = {
     "be"  : 'b',
@@ -245,7 +246,7 @@ synonyms = {
     "tile"         : "dock",
 }
 
-# Exit if no arguments.  Unless testing_value...
+# Exit if no arguments.  Unless testing_value exists...
 if len(argv) == 1:
     if not testing_values:
         dbugprint("Didn't recieve anything to type.", logging_level="ERROR")
@@ -254,8 +255,8 @@ if len(argv) == 1:
 
 class Command:
     #data members of class
-    name = ""  #attribute 1
-    confidence = 0.0    #attribute 2
+    name = ""         #attribute 1
+    confidence = 0.0  #attribute 2
     #class default constructor
     def __init__(self,name,confidence):
         self.name = name
@@ -273,10 +274,11 @@ class Command:
     def __repr__(self):
         # This is what prints when printing a list of these. Ex. print(str(commands[]))
         return f"('{self.name}', {self.confidence})"
+    # How to instantiate.
     #cmd1 = Command('alt tab', 0)
 
 def canBeSingleChar(x):
-    # intended to indicate whether x can either be a single character (ex. 'r') or a mis-recognized word that which may have been intended to be a letter (ex. "are")
+    # intended to indicate whether x can either be a single character (ex. 'r') or a mis-recognized word which may have been intended to be a letter (ex. "are")
     singleChar = len(x) == 1 and isinstance(x, str)
     potentialSingleLetter = x in possibleSingleLetterMisinterpretations
     punctuation_mark = x in mark_signs
@@ -346,7 +348,7 @@ def getLiteralKeyCommands(string):
     if string.startswith("press ") or string.startswith("hit "):
         string = ' '.join(string.split()[1:])
     def extractFirstSpecialKeyPhrase(words):
-        # I don't know what I'm doing here.  Trying to make something recursive but I can't imagine how this will work.
+        # I don't know what I'm doing here.  Trying to make something recursive but I can't imagine how this will work.  Good luck following the logic.  lol
         if not words:
             return False
         for key_word in sortedSpecialKeys + sorted_mark_signs:
@@ -383,17 +385,17 @@ def getLiteralKeyCommands(string):
     return literal_keys
 
 def swap_in_symbols(string):
-    # This is to correct the format of the string google assistant will send.
-    # Ex. "he said don ' t do a girl ' s job !" --toSentence()--> "He said don't do a girl's job!"
+    # a jumble of logic that ultimately swaps in symbols for text representing them.  Ex "here's a percent sign sign" -> "here's a % sign"
     for signifier in ["mark", "sign"]:
         for symbol in mark_signs:
             symbol_phrase = f"{symbol} {signifier}"
             if re.search(symbol_phrase, string, flags=re.IGNORECASE):
                 insensitive_hippo = re.compile(re.escape(symbol_phrase), re.IGNORECASE)
                 string = insensitive_hippo.sub(mark_signs[symbol], string)
-            # Taking into account that speaker might've said "open" or "close" in past-tense, checking for symbol phrases in past-tense
+            # Taking into account that user might've said "open" or "close" in past-tense, checking for symbol phrases in past-tense
             # if symbol starts with 'open' or 'close' AND (ingoring case) the string also contains 'open' or 'close', and the next word in the symbol (ex. 'bracket'):
-            if re.search("^open|^close", symbol) and re.search(r"\bopened|\bclosed|\bclothes", string, flags=re.IGNORECASE) and string.count(symbol.split()[1]): #forehead slap on g-assistant mishearing "closed" as "clothes"
+            # forehead slap on g-assistant mishearing "closed" as "clothes"
+            if re.search("^open|^close", symbol) and re.search(r"\bopened|\bclosed|\bclothes", string, flags=re.IGNORECASE) and string.count(symbol.split()[1]):
                 # make past-tense version
                 pt_symbol_phrase = symbol_phrase.replace("open", "opened").replace("close", "closed")
                 # gotta make a stupid "clothes" case since it can sound like "close"
@@ -411,6 +413,8 @@ def swap_in_symbols(string):
     return string
 
 def toSentence(string):
+    # This is to correct the format of the string google assistant will send.
+    # Ex. "he said don ' t do a girl ' s job !" --toSentence()--> "He said don't do a girl's job!"
     def upper_initial(string):
         # as far as I can tell, the if/else at the end is in case string is '' to avoid trying to process empty strings
         return string[0].upper() + string[1:] if string else string
@@ -422,7 +426,7 @@ def toSentence(string):
     #for p in ['s','S','t','T','d','D','ll','LL']:
     #    string = string.replace(f" ' {p} ", f"'{p} ")
     # a little side note. the main difference is this will remove the spaces around a ' for a single "l", where-as the FOR loop will do it only for a double "ll"
-    string = re.sub(r"\s'\s+([sStTdDlL])", r"'\1", string)
+    string = re.sub(r"\s'\s+([sStTdDlLmM])", r"'\1", string)
     # Swapping this .replace() with re.sub() one-line
     #return string.replace(' ,',',')
     # removes spaces before any punctuation.  This works better than above (one-liner) but has added benefit or also removing spaces between repeated punctuation
@@ -430,9 +434,12 @@ def toSentence(string):
     string = re.sub(r'\s+([,?.!"])', r'\1', string)
     # self-explanatory. Ex "here's a percent sign sign" -> "here's a % sign"
     string = swap_in_symbols(string)
+    # capitalizing all instances of i'm, i'll, etc.
+    string = string.replace("i'", "I'")
     return string
 
 def typeSentences(string):
+    # Types out inputted string, taking care to not include any known return language at the end.  Ex. "The brown fox. Enter"
     single_word_return_keywords = ['enter','return','send']
     dual_word_return_keywords   = ['new line', 'next line', 'hit return', 'hit enter']
     last_word_means_Enter      =            string.split()[-1].lower() in single_word_return_keywords
@@ -485,6 +492,7 @@ def pressLiteralKeys(keys, n=0):
 
 def swap_in_synonyms(string):
     # exception to synonym swapping
+    # I honestly don't remember why I put in this exception.  Likely to prevent annoying behavior.
     if string.count("window") and (string.count("new") or string.count("screenshot")):
         dbugprint('Exception!  NOT swapping "window" or other words in command. Moving onto next command.')
         return string
@@ -519,8 +527,6 @@ def get_best_guess_and_confidence(command):
         best_guess = None
     dbugprint(f"{int(output.confidence * 100)}% confident \"{command}\" means ['{output.name}']")
     return output
-    dbugprint(f"{int(tuple[1] * 100)}% confident \"{command}\" means ['{tuple[0]}']")
-    return tuple
 
 def split_phrase_into_command_list(phrase):
     commands = []
@@ -581,11 +587,12 @@ def findMultiplierString(string):
             # (ex. ie. it'll properly removes "twice" from "page down twice", instead of trying to remove "2 times")
             multiplier_string = phrase
             # no need to continue the FOR loop if it already found one.
-            # Yes, if someone said "twice" and "thrice" it'll only catch one but in that's more a user error case than something I should account for.
+            # Yes, if someone said "twice" and "thrice" it'll only catch one but that's more a user error case than something I should account for.
             break
     # Looking for the keyword that indicates a multiplier phrase
+    # Edit: Instead of adding 'X' to the list, I added the IGNORECASE flag.  I'm not expecting bugs but I'm taking note of this change here in case it does cause bugs.
     for times in ['\*', 'x', 'times']:
-        found = re.search(f"(\w+) +{times}", string)
+        found = re.search(f"(\w+) +{times}", string, flags=re.IGNORECASE)
         if found:
             n = inferNumber(found.group(1))
             if n:
@@ -608,7 +615,15 @@ def getMultiplierFactor(string):
     return (command_wOut_multiplier_string, n)
 
 def _speak(string):
-    system(f'nircmd.exe speak text "{string}"')
+    # Cannot try/except with os.system() to detect whether app exists or not
+    # Swapping for subprocess method for which that kind of check works
+    #system(f'nircmd.exe speak text "{string}"')
+    try:
+        subprocess.run(f'nircmd.exe speak text "{string}"', check=True)
+    except (OSError, subprocess.SubprocessError, subprocess.CalledProcessError):
+        dbugprint("Speak application (nircmd) may not exist.  Is it installed?", logging_level="ERROR")
+    except:
+        dbugprint("Speak application (nircmd) failed.", logging_level="ERROR")
 
 def lastDitchAttemptToInterpret(command, n=1):
     command_possibilities = [Command(command, 0)]
@@ -748,7 +763,7 @@ def main():
         if switch_to_app:
             _app = switch_to_app.group(1)
             if _app:
-                dbugprint(f"Attempting to make '{_app}' the active window.", "INFO")
+                dbugprint(f"Attempting to make '{_app}' the active window.", logging_level="INFO")
                 execute["switch application to x"](_app)
                 continue
         
