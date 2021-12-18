@@ -159,6 +159,9 @@ mark_signs = {
     "forward slash": '/',
     "back slash"   : '\\',
     "backslash"    : '\\',
+    "period"       : '.',
+    "exclamation"  : '!',
+    "comma"  : ','
 }
 sorted_mark_signs = sorted(mark_signs, key=lambda x: (len(x.split()), len(x)), reverse=True)
 execute = {
@@ -699,7 +702,7 @@ def main():
         # Will format string in sentence format and type it out one char at a time.
         phrase = ' '.join(WORDS[1:])
         dbugprint("Typing verbatim.  No command interpretation.\n", logging_level="INFO")
-        typeSentences( toSentence(phrase) )
+        typeSentences( toSentence(toSentence(phrase)) ) # meh.  Better than tinkering wondering why punctuation wasn't being treated nice
         return
 
     ########################################
