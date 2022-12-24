@@ -78,6 +78,7 @@ SpecialKeys = {
     "space bar"   : kf.Key.space,
     "del"         : kf.Key.delete,
     "delete"      : kf.Key.delete,
+    "back space"  : kf.Key.backspace,
     "enter"       : kf.Key.enter,
     "return"      : kf.Key.enter,
     "new line"    : kf.Key.enter,
