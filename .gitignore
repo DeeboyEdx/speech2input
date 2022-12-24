@@ -1,0 +1,3 @@
+type.log
+*.ffs_*
+__pycache__
