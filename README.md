@@ -8,7 +8,7 @@ Use your smart home device to dictate and send voice commands to you Windows com
 
 ## Description
 
-A desire to dictate to my computer expanded to wanting to give my computer voice commands like I do my Android phone; thus this project's inception. I succeeded in creating something functional using python in combination with a number of free tools.  It isn't perfect and may not be competitive with Microsoft's pre-installed solution [Windows Speech Recognition](https://support.microsoft.com/en-us/windows/windows-speech-recognition-commands-9d25ef36-994d-f367-a81a-a326160128c7) but my method allows control from smart devices such as a smart phone or a smart home device which has far more widespread adoption; and which I find much more useful.  This project may also have applications for those who have impairments that hinder tactile computer input.
+A desire to dictate to my computer expanded to wanting to give my computer voice commands like I do my Android phone; thus this project's inception. I succeeded in creating something functional using python in combination with a number of free tools.  It isn't perfect and may not be competitive with Microsoft's pre-installed solution [Windows Speech Recognition](https://support.microsoft.com/windows/windows-speech-recognition-commands-9d25ef36-994d-f367-a81a-a326160128c7) but my method allows control from smart devices such as a smart phone or a smart home device which has far more widespread adoption; and which I find much more useful.  This project may also have applications for those who have impairments that hinder tactile computer input.
 
 ### Requirements
 
@@ -38,7 +38,7 @@ All requirements[^1] are *free*.  Paid versions of the accounts are unnecessary.
 
    1. **Google Route** Follow [these instructions](https://www.push2run.com/setup_Pushbullet.html).  With the completion of this step, you will be able to do a lot such as shutdown, reboot, google search, youtube search, open a program of your choice, etc.  See more [with these example cards](https://push2run.com/examplecards.html).
 
-1. (optional) "_Install_"[^2] **NirCmd** to enable synthesized "voice" responses from your computer.[^3]  It's a small command-line utility that allows you to do some useful tasks without displaying any user interface.  TBH, some of its functionality overlaps with this project's so if you wish, you can bypass python altogether by using Push2Run and NirCmd creatively.
+1. (optional) "*Install*"[^2] **NirCmd** to enable synthesized "voice" responses from your computer.[^3]  It's a small command-line utility that allows you to do some useful tasks without displaying any user interface.  TBH, some of its functionality overlaps with this project's so if you wish, you can bypass python altogether by using Push2Run and NirCmd creatively.
 
    >It's recommended to copy the executable of NirCmd (nircmd.exe) to your windows directory, or to any other folder listed in your PATH environment variable, so you won't need to type the full path of nircmd in each time that you want to use it.
 
@@ -46,22 +46,28 @@ All requirements[^1] are *free*.  Paid versions of the accounts are unnecessary.
 
 1. Setup Push2Run (p2r) cards.  By this step, you should be ready to import (or create) cards that will facilitate the connection between Push2Run and these python project files.  To import, simply drag the included [Push2Run_type_cards.p2r](Push2Run_type_cards.p2r) file (a JSON file) into Push2Run.  Feel free to discard the file once imported.
 
-    <details><summary>Click here to see how to build your own cards.</summary>
+    <br><details><summary><strong>Click here to see how to build your own cards.</strong></summary>
     <p>
 
-    ## __Type__ card
+    ## **Type** card
+
     We'll start with the dictation card.
     With this, you'll be able to tell your computer to **type out** long sentences.
-    ![image](https://user-images.githubusercontent.com/71462840/146619077-ebca46e2-0119-4d00-a05d-c976aa0ef4e0.png)
+    ![Type card example](https://user-images.githubusercontent.com/71462840/146619077-ebca46e2-0119-4d00-a05d-c976aa0ef4e0.png)
+    <br><br>
 
-    ## __Command__ card
+    ## **Command** card
+
     Next is the command card.
     With this, you'll be able to tell your computer to **perform** a multitude of physical inputs, either colloquially "minimize" or literally "press alt space n".  See list of examples.  **TODO**
-    ![image](https://user-images.githubusercontent.com/71462840/146622849-f7a05af8-faef-4a3b-991c-d41e045781b2.png)
+    ![Command card example](https://user-images.githubusercontent.com/71462840/146622849-f7a05af8-faef-4a3b-991c-d41e045781b2.png)
+    <br><br>
 
-    ## __Volume__ card
+    ## **Volume** card
+
     With this card, you'll be able to tell your computer what volume to set.  You can also tell it to mute, un-mute, toggle mute, or even to "shut up".  TBH, I'm still working out the kinks on this one so I did not include a card for volume adjustments in the included p2r file.
-    ![image](https://user-images.githubusercontent.com/71462840/146622938-419fec15-63c8-4a9c-a6f7-5e415f2c93ab.png)
+    ![Volume card example](https://user-images.githubusercontent.com/71462840/146622938-419fec15-63c8-4a9c-a6f7-5e415f2c93ab.png)
+    <br><br>
 
     </p>
     </details>
