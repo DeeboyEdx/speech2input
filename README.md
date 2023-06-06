@@ -12,7 +12,7 @@ A desire to dictate to my computer expanded to wanting to use voice commands wit
 
 ### Requirements
 
-All requirements[^1] are *FREE*.  The only exceptions if you've already used your free allotments, would be the Pushbullet and/or IFTTT accounts.
+All requirements are *FREE*[^1].  The only exceptions if you've already used your free allotments, would be the Pushbullet and/or IFTTT accounts.
 
 - Windows PC
   - [Push2Run](https://www.push2run.com/) application
@@ -73,7 +73,7 @@ All requirements[^1] are *FREE*.  The only exceptions if you've already used you
     </p>
     </details>
 
-    <details><summary>Read an optional brief Push2Run primer...</summary>
+    <details><summary>Read an additional brief Push2Run primer...</summary>
     <p>
 
     - By this point, you will have an invocation keyword setup to indicate to your digital assistant to forward commands through your Pushbullet service which will be captured by Push2Run.  In this readme's example scenarios, we will use the "tell my comptuer to ~" keywords which colloquially just makes sense.
@@ -90,18 +90,22 @@ All requirements[^1] are *FREE*.  The only exceptions if you've already used you
       1. And pass long "**volume to 20 percent**" to the script.
 
     </p>
+    </details><br>
+
+    <details><summary>Caveats, acknowledgements, and known bugs to fix</summary>
+    <p>
+    
+    - [x] *An internet connection is required for your computer to recieve commands.*
+    - [x] *You must be logged into your computer for most (if not all) actions to succeed.*
+    - [x] Google Assistant's attention span is short so commands must be swift and to the point.
+      - [x] ...as such, as a method of performing multiple or complex actions in a reasonable amount of time, utilization of this project may be ineffectual.
+    - [x] Giving literal key-press commands can be tricky to impossible as it is wholly dependent on what Google Assistant *thinks* it heard you say.  For example, it may hear "end" when you say "n".  >_>  I try to work with this by providing an equivalency dictionary but ofc it isn't perfect.
+    - [ ] Log file location may differ depending on whether script is executed from console[^5] or by Push2Run.
+    
+    </p>
     </details>
 
-#### Caveats, acknowledgements, and known bugs to fix
-
-- [x] *An internet connection is required for your computer to recieve commands.*
-- [x] *You must be logged into your computer for most (if not all) actions to succeed.*
-- [x] Google Assistant's attention span is short so commands must be swift and to the point.
-  - [x] ...as such, as a method of performing multiple or complex actions in a reasonable amount of time, utilization of this project may be ineffectual.
-- [x] Giving literal key-press commands can be tricky to impossible as it is wholly dependent on what Google Assistant *thinks* it heard you say.  For example, it may hear "end" when you say "n".  >_>  I try to work with this by providing an equivalency dictionary but ofc it isn't perfect.
-- [ ] Log file location may differ depending on whether script is executed from console[^5] or by Push2Run.
-
-# (partial) List of viable commands
+# List of viable commands
 
 Please note the following
 
