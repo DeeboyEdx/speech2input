@@ -10,7 +10,7 @@ Use your smart home device to dictate and send voice commands to you Windows com
 
 A desire to dictate to my computer expanded to wanting to use voice commands with my computer like I do my Android phone; thus this project's inception. I created something functional using python in combination with a number of free tools.  It may not be competitive with Microsoft's [Windows Speech Recognition](https://support.microsoft.com/windows/windows-speech-recognition-commands-9d25ef36-994d-f367-a81a-a326160128c7) solution, but my method allows control from smart devices which have widespread adoption, and I find it more useful.  This project may also have applications for those who have impairments that hinder tactile computer input.
 
-### Requirements
+## Requirements
 
 All requirements are *FREE*[^1].  The only exceptions if you've already used your free allotments, would be the Pushbullet and/or IFTTT accounts.
 
@@ -94,18 +94,18 @@ All requirements are *FREE*[^1].  The only exceptions if you've already used you
 
     <details><summary>Caveats, acknowledgements, and known bugs to fix</summary>
     <p>
-    
+
     - [x] *An internet connection is required for your computer to recieve commands.*
     - [x] *You must be logged into your computer for most (if not all) actions to succeed.*
-    - [x] Google Assistant's attention span is short so commands must be swift and to the point.
-      - [x] ...as such, as a method of performing multiple or complex actions in a reasonable amount of time, utilization of this project may be ineffectual.
-    - [x] Giving literal key-press commands can be tricky to impossible as it is wholly dependent on what Google Assistant *thinks* it heard you say.  For example, it may hear "end" when you say "n".  >_>  I try to work with this by providing an equivalency dictionary but ofc it isn't perfect.
+    - [x] Digital assistants' attention span is short so commands must be swift and to the point.
+      - [x] As such, performing multiple or complex actions utilization of this project may prove difficult.  Thankfully the Alexa method has a follow-up mode which alleviates this pressure.
+    - [x] Giving literal key-press commands can be tricky to near impossible as it is wholly dependent on what the digital assistant *thinks* it heard and their tendency to listen for colloquial language.  For example, it may hear "end" when you say "n".  I try to work with this by providing an equivalency dictionary but it isn't perfect.
     - [ ] Log file location may differ depending on whether script is executed from console[^5] or by Push2Run.
-    
+
     </p>
     </details>
 
-# List of viable commands
+## List of viable commands
 
 Please note the following
 
@@ -116,12 +116,12 @@ Please note the following
 
 - Although Google Assistant will handily detect in your speech when you meant to use punctuation, and I acknowledge it's a mouth-full but to explicitely indicate to my little script to produce a punctuation mark, you must say "mark" or "sign" afterwards.  For example: "open curly bracket mark x closed curly bracket sign" -> "{ x }"
 
-## Typing
+### Typing
 
 - type a phrase of your choice comma with punctuation exclamation mark
 - type i'll  be there at 6 pm period mark send
 
-## Colloquial
+### Colloquial
 
 - maximize
 - minimize
@@ -139,13 +139,13 @@ Please note the following
 - close program
 - change program
 
-# Media
+### Media
 
 - pause
 - play
 - full screen (comptible for toggling full screen on most players)
 
-## Literal
+### Literal
 
 - alt tab [five times]
 - alt space n
@@ -153,7 +153,7 @@ Please note the following
 - etc.
 - control alt delete <- is a protected key combination thus will NOT work
 
-## in Browser
+### in Browser
 
 - go to website dot com
 - refresh
@@ -164,7 +164,7 @@ Please note the following
 - reopen tab
 - change tab
 
-## Text
+### Text
 
 - select all
 - cut
@@ -181,7 +181,7 @@ Please note the following
 - emojis (don't get excited, just pulls up the menu)
 - change input language
 
-## System
+### System
 
 - show notifications
 - show time
@@ -193,7 +193,7 @@ Please note the following
 - open system menu
 - open control panel
 
-## Misc
+### Misc
 
 - wait 10 seconds and ...
 - type I see you exclamation mark after 3 minutes
