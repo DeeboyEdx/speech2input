@@ -39,8 +39,6 @@ All requirements[^1] are *FREE*.  The only exceptions if you've already used you
 
 1. (optional) "*Install*"[^2] **NirCmd** to enable synthesized "voice" responses from your computer.[^3]  This is a small command-line utility that allows you to do some useful tasks without displaying any user interface such as voice synthesis.
 
-   >It is recommended to copy the NirCmd executable (nircmd.exe) to your windows directory, or to any other folder listed in your PATH environment variable, so you won't need to type the full path of nircmd each time that you want to use it.
-
 1. Setup Push2Run (p2r) cards.  By this step, you should be ready to import (or create) cards that will facilitate the connection between Push2Run and these python project files.  To import, simply drag the included [Push2Run_type_cards.p2r](Push2Run_type_cards.p2r) file (a JSON file) into Push2Run.  Feel free to discard the file once imported.
 
     <br><details><summary><strong>Click here to see how to build your own cards.</strong></summary>
