@@ -57,7 +57,7 @@ All requirements[^1] are *FREE*.  The only exceptions if you've already used you
     ## **Command** card
 
     Next is the command card.
-    With this, you'll be able to tell your computer to **perform** a multitude of physical inputs, either colloquially "minimize" or literally "press alt space n".  See list of examples.  **TODO**
+    With this, you'll be able to tell your computer to **perform** a multitude of physical inputs, either colloquially "minimize" or literally "press alt space n".  See [more](#literal).
 
     ![Command card example](https://user-images.githubusercontent.com/71462840/146622849-f7a05af8-faef-4a3b-991c-d41e045781b2.png)
     <br><br>
@@ -135,7 +135,7 @@ Please note the following
 * play
 * full screen (comptible for toggling full screen on most players)
 ## Literal
-* alt tab (five times)
+* alt tab [five times]
 * alt space n
 * shift r
 * (most other combinations you can think of)
