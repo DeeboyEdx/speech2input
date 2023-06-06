@@ -35,7 +35,9 @@ All requirements[^1] are *FREE*.  The only exceptions if you've already used you
 
    1. **Alexa Route** Refer to the [PC Pusher website](http://pcpusher.s3-website.us-east-2.amazonaws.com/) for instructions.
 
-   1. **Google Route** Follow [these instructions](https://www.push2run.com/setup_Pushbullet.html).  With the completion of these steps, you will be able to do a lot such as shutdown, reboot, google search, youtube search, open a program of your choice, etc.  See more [with these example cards](https://push2run.com/examplecards.html).
+   1. **Google Route** Follow [these instructions](https://www.push2run.com/setup_Pushbullet.html).  
+
+   With the completion of these steps, you will be able to do a lot such as shutdown, reboot, google search, youtube search, open a program of your choice, etc.  See more [with these example cards](https://push2run.com/examplecards.html).
 
 1. (optional) "*Install*"[^2] **NirCmd** to enable synthesized "voice" responses from your computer.[^3]  This is a small command-line utility that allows you to do some useful tasks without displaying any user interface such as voice synthesis.
 
