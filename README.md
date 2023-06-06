@@ -64,10 +64,11 @@ All requirements[^1] are *FREE*.  The only exceptions if you've already used you
 
     ## **Volume** card
 
-    With this card, you'll be able to tell your computer what volume to set.  You can also tell it to mute, un-mute, toggle mute, or even to "shut up".  TBH, I'm still working out the kinks on this one so I did not include a card for volume adjustments in the included p2r file.
+    With these cards, you'll be able to tell your computer to change the volume.  You can also tell it to mute, un-mute, toggle mute, or even to "shut up".  I'm still working out the kinks for this one so I did not include a card for volume adjustments in the included p2r file.
 
     ![Volume card example](https://user-images.githubusercontent.com/71462840/146622938-419fec15-63c8-4a9c-a6f7-5e415f2c93ab.png)
-    <br><br>
+
+    Note that there are two cards as I found it more successful to separate them like this.
 
     </p>
     </details>
@@ -138,8 +139,8 @@ Please note the following
 * alt tab [five times]
 * alt space n
 * shift r
-* (most other combinations you can think of)
-* control alt delete (is a protected key combination thus will NOT work)
+* etc.
+* control alt delete <- is a protected key combination thus will NOT work
 ## in Browser
 * go to website dot com
 * refresh
