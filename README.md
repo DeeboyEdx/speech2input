@@ -41,7 +41,7 @@ All requirements[^1] are *FREE*.  The only exceptions if you've already used you
 
 1. (optional) "*Install*"[^2] **NirCmd** to enable synthesized "voice" responses from your computer.[^3]  This is a small command-line utility that allows you to do some useful tasks without displaying any user interface such as voice synthesis.
 
-1. Setup Push2Run (p2r) cards.  By this step, you should be ready to import (or create) cards that will facilitate the connection between Push2Run and these python project files.  To import, simply drag the included [Push2Run_type_cards.p2r](Push2Run_type_cards.p2r) file (a JSON file) into Push2Run.  Feel free to discard the file once imported.
+1. Setup Push2Run (p2r) cards.  By this step, you should be ready to import (or create) cards that will facilitate the connection between Push2Run and these python project files.  To import, simply drag the included [Push2Run_type_cards.p2r](Push2Run_type_cards.p2r) file (a JSON file) into your Push2Run client.  Feel free to discard the file once imported.
 
     <br><details><summary><strong>Click here to see how to build your own cards.</strong></summary>
     <p>
@@ -50,6 +50,7 @@ All requirements[^1] are *FREE*.  The only exceptions if you've already used you
 
     We'll start with the dictation card.
     With this, you'll be able to tell your computer to **type out** long sentences.
+
     ![Type card example](https://user-images.githubusercontent.com/71462840/146619077-ebca46e2-0119-4d00-a05d-c976aa0ef4e0.png)
     <br><br>
 
@@ -57,12 +58,14 @@ All requirements[^1] are *FREE*.  The only exceptions if you've already used you
 
     Next is the command card.
     With this, you'll be able to tell your computer to **perform** a multitude of physical inputs, either colloquially "minimize" or literally "press alt space n".  See list of examples.  **TODO**
+
     ![Command card example](https://user-images.githubusercontent.com/71462840/146622849-f7a05af8-faef-4a3b-991c-d41e045781b2.png)
     <br><br>
 
     ## **Volume** card
 
     With this card, you'll be able to tell your computer what volume to set.  You can also tell it to mute, un-mute, toggle mute, or even to "shut up".  TBH, I'm still working out the kinks on this one so I did not include a card for volume adjustments in the included p2r file.
+
     ![Volume card example](https://user-images.githubusercontent.com/71462840/146622938-419fec15-63c8-4a9c-a6f7-5e415f2c93ab.png)
     <br><br>
 
