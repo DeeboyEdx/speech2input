@@ -12,7 +12,7 @@ A desire to dictate to my computer expanded to wanting to use voice commands wit
 
 ### Requirements
 
-All requirements[^1] are *FREE*.  The only exceptions would be the Pushbullet or IFTTT accounts if you've already used your free allotments.
+All requirements[^1] are *FREE*.  The only exceptions if you've already used your free allotments, would be the Pushbullet and/or IFTTT accounts.
 
 - Windows PC
   - [Push2Run](https://www.push2run.com/) application
@@ -21,10 +21,10 @@ All requirements[^1] are *FREE*.  The only exceptions would be the Pushbullet or
 - [Pushbullet](https://www.Pushbullet.com/) account
 - a smart device from which to send Pushbullet messages such as one of the below options
   - a device with Amazon Alexa smart home assistant [FREE option]
-    - the [PC Pusher skill](http://pcpusher.s3-website.us-east-2.amazonaws.com/) (currently in beta)
-  - a device w/ Google Assistant [Potentially Free option]
-    - [IFTTT](https://ifttt.com/) account
-      - an applet to connect to the Pushbullet service such as the [Tell my computer to... (Pushbullet Version)](https://ifttt.com/applets/U7MjJfV3) applet
+    - with the [PC Pusher skill](http://pcpusher.s3-website.us-east-2.amazonaws.com/) (currently in beta)
+  - a device with Google Assistant [Potentially Free option]
+    - and an [IFTTT](https://ifttt.com/) account
+      - with an applet that links your Google and Pushbullet services such as [Tell my computer to... (Pushbullet Version)](https://ifttt.com/applets/U7MjJfV3)
 - (optional) [NirCmd](https://www.nirsoft.net/utils/nircmd.html) for audial responses
 
 ## Setup
