@@ -39,7 +39,29 @@ All requirements[^1] are *FREE*.  The only exceptions if you've already used you
 
    With the completion of these steps, you will be able to do a lot such as shutdown, reboot, google search, youtube search, open a program of your choice, etc.  See more [with these example cards](https://push2run.com/examplecards.html).
 
-1. (optional) "*Install*"[^2] **NirCmd** to enable synthesized "voice" responses from your computer.[^3]  This is a small command-line utility that allows you to do some useful tasks without displaying any user interface such as voice synthesis.
+    <details><summary>Read an optional brief Push2Run primer...</summary>
+    <p>
+
+    * By this point, you will have an invocation keyword setup to indicate to your digital assistant to forward commands through your Pushbullet service.  In this readme's example scenarios, we will use the "tell my comptuer to ~" keywords which colloquially just makes sense.
+
+    * `$` represents your variable.  For example, let's say you've setup your Type card as below with "type $" as one of the entries in the 'Listen for' field...[^2]
+
+       You say: "_tell my comptuer to_ type **it is a lovely day period mark**"
+
+       type.py will recieve: "**it is a lovely day period mark**" which it will then format the string nicely and simulate the key presses to type it out on your computer.  "It is a lovely day."
+      
+    * within the "Listen for" field, the `*` is a throw-away catch-all.  It's only purpose is for matching phrases, not for capturing text.  For example...
+    
+      You say: "_tell my computer to_ lower the dang volume **to 20 percent**"
+    
+      Push2Run will match and throw away "lower the dang".
+    
+      Then capture "**to 20 percent**" and pass it along to [change_audio_volume.py](change_audio_volume.py).
+
+    </p>
+    </details>
+
+1. (optional) "*Install*"[^3] **NirCmd** to enable synthesized "voice" responses from your computer.[^4]  This is a small command-line utility that allows you to do some useful tasks without displaying any user interface such as voice synthesis.
 
 1. Setup Push2Run (p2r) cards.  By this step, you should be ready to import (or create) cards that will facilitate the connection between Push2Run and these python project files.  To import, simply drag the included [Push2Run_type_cards.p2r](Push2Run_type_cards.p2r) file (a JSON file) into your Push2Run client.  Feel free to discard the file once imported.
 
@@ -73,29 +95,6 @@ All requirements[^1] are *FREE*.  The only exceptions if you've already used you
     </p>
     </details>
 
-    <details><summary>more info...</summary>
-    <p>
-
-    #### A brief Push2Run primer... 
-    * You will have setup spoken keyword(s) in IFTTT to indicate to Google Assistant which verbal commands to forward to Pushbullet.  Moving forward, in our example scenarios, we will use the [recommended IFTTT applet's](https://ifttt.com/applets/U7MjJfV3) keywords "tell my comptuer to ~" which colloquially just makes sense.[^4]
-
-    * `$` represents your variable.  For example, let's say you've setup your Type card as below with "type $" as one of the entries in the 'Listen for' field...[^5]
-
-       You say: "_tell my comptuer to_ type **it is a lovely day period**"
-
-       type.py will recieve: "**it is a lovely day period**" which it will then format the string nicely and simulate the key presses to type it out on your computer.  "It is a lovely day."
-      
-    * within the "Listen for" field, the `*` is a throw-away catch-all.  It's only purpose is for matching phrases, not for capturing text.  For example...
-    
-      You say: "_tell my computer to_ lower the dang volume **to 20 percent**"
-    
-      Push2Run will match and throw away "lower the dang".
-    
-      Then capture "**to 20 percent**" and pass it along to [change_audio_volume.py](change_audio_volume.py).
-
-    </p>
-    </details>
-
 
 #### Caveats, acknowledgements, and known bugs to fix
 - [x] *An internet connection is required for your computer to recieve commands.*
@@ -103,18 +102,18 @@ All requirements[^1] are *FREE*.  The only exceptions if you've already used you
 - [x] Google Assistant's attention span is short so commands must be swift and to the point.
   - [x] ...as such, as a method of performing multiple or complex actions in a reasonable amount of time, utilization of this project may be ineffectual.
 - [x] Giving literal key-press commands can be tricky to impossible as it is wholly dependent on what Google Assistant _thinks_ it heard you say.  For example, it may hear "end" when you say "n".  >_>  I try to work with this by providing an equivalency dictionary but ofc it isn't perfect.
-- [ ] Log file location may differ depending on whether script is executed from console[^6] or by Push2Run.
+- [ ] Log file location may differ depending on whether script is executed from console[^5] or by Push2Run.
 
 # (partial) List of viable commands
 Please note the following
-* You can chain commands together with delimeters "and", and "then".[^7]
+* You can chain commands together with delimeters "and", and "then".[^6]
 <!-- Actually this isn't working now.  Gotta debug.
 * You can also delay commands with "wait|sleep|hold x seconds|minutes|hours".
   * Ex. `tell my computer to wait 30 seconds then press start button`-->
 * Although Google Assistant will handily detect in your speech when you meant to use punctuation, and I acknowledge it's a mouth-full but to explicitely indicate to my little script to produce a punctuation mark, you must say "mark" or "sign" afterwards.  For example: "open curly bracket mark x closed curly bracket sign" -> "{ x }"
 ## Typing
 * type a phrase of your choice comma with punctuation exclamation mark
-* type i'll  be there at 6 pm period send
+* type i'll  be there at 6 pm period mark send
 ## Colloquial
 * maximize
 * minimize
@@ -180,9 +179,8 @@ Please note the following
 * type I see you exclamation mark after 3 minutes
 
 [^1]: Aside from the Windows PC and a device with smart home assistant, of course.  These devices are ubiquitous but I recognize accessibility to these devices is not universal.
-[^2]: Download and extract to a location in your PATH environmental variable OR this project's root folder.
-[^3]: Currently, audial responses are only used to confirm volume adjustments and to inform the user when a command was not understood.
-[^4]: I'm not fond of the confusing way IFTTT uses the terminology "connect" to either mean _to enable_ an applet or _to get_ one from their store of sorts.  Maybe it's just me.  That aside.  Thankfully if you choose to utilize the "applet" created by loneseeker777 called "[Tell my computer to... (Pushbullet Version)](https://ifttt.com/applets/U7MjJfV3)", you won't utilize one of your 3 (of 5?) free slots.  I know, it's not ideal but it's free.
-[^5]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes causing unexpected results.  As you may experience with the Volume cards later.
-[^6]: To execute from console do `python type.py DESIRED COMMAND HERE`.  Use the `-v` argument to avoid interpretation and simply dictate.  `python type.py -v DESIRED SENTENCE HERE`  You may choose to use quotations around your command (`"DESIRED COMMAND"`) if you wish.
-[^7]: Actually by default, Push2Run also uses "and" as a delimeter to separate commands.  Given that setting, I acknowledge that the "Full Screen and Play" card is redundant when you have separate "Full Screen" and "Pause/Play (press Spacebar)" cards.
+[^2]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes causing unexpected results.  As you may experience with the Volume cards later.
+[^3]: Download and extract to a location in your PATH environmental variable OR this project's root folder.
+[^4]: Currently, audial responses are only used to confirm volume adjustments and to inform the user when a command was not understood.
+[^5]: To execute from console do `python type.py DESIRED COMMAND HERE`.  Use the `-v` argument to avoid interpretation and simply dictate.  `python type.py -v DESIRED SENTENCE HERE`  You may choose to use quotations around your command (`"DESIRED COMMAND"`) if you wish.
+[^6]: Actually by default, Push2Run also uses "and" as a delimeter to separate commands.  Given that setting, I acknowledge that the "Full Screen and Play" card is redundant when you have separate "Full Screen" and "Pause/Play (press Spacebar)" cards.
