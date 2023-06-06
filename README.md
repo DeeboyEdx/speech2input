@@ -1,6 +1,8 @@
 # VOICE-TO-TYPE
 
-## Demo
+Use your smart home device to dictate and send voice commands to you Windows computer.
+
+## Demo Video
 
 [![Voice-to-type demo video](https://img.youtube.com/vi/2mzV1V0gVAE/0.jpg)](https://www.youtube.com/watch?v=2mzV1V0gVAE)
 
