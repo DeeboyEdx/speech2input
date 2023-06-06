@@ -1,34 +1,47 @@
 # VOICE-TO-TYPE
-<!--#### Video Demo: [click here](url)-->
+
+## Demo
+
+<iframe id="YouTubeVideo" src="https://www.youtube.com/embed/2mzV1V0gVAE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### Description
 
-A desire to dictate to my computer expanded to wanting to give my computer voice commands like I do my Android phone; thus this project's inception.
-I succeeded in creating something functional using python in combination with a number of free tools.  It isn't perfect and may not be competitive with Microsoft's pre-installed solution [Windows Speech Recognition](https://support.microsoft.com/en-us/windows/windows-speech-recognition-commands-9d25ef36-994d-f367-a81a-a326160128c7) but my method allows control from smart devices like a smartphone or a Google Home device which has far more widespread adoption; and which I find much more useful.  This project may also have applications for those who have impairments that hinder tactile computer input.
+A desire to dictate to my computer expanded to wanting to give my computer voice commands like I do my Android phone; thus this project's inception. I succeeded in creating something functional using python in combination with a number of free tools.  It isn't perfect and may not be competitive with Microsoft's pre-installed solution [Windows Speech Recognition](https://support.microsoft.com/en-us/windows/windows-speech-recognition-commands-9d25ef36-994d-f367-a81a-a326160128c7) but my method allows control from smart devices such as a smart phone or a smart home device which has far more widespread adoption; and which I find much more useful.  This project may also have applications for those who have impairments that hinder tactile computer input.
 
 ### Requirements
-All requirements[^1] are *free*.  Paid versons of the accounts are unnecessary.  The only exception I can think of would be the PushBullet or IFTTT accounts if you've already used your free allotments.
+All requirements[^1] are *free*.  Paid versions of the accounts are unnecessary.  The only exceptions would be the Pushbullet or IFTTT accounts if you've already used your free allotments.
+
 - Windows PC
-- a device w/ Google Assistant + a [Google](https://www.gmail.com) account
-- [IFTTT](https://ifttt.com/) account
-  - [Tell my computer to... (Pushbullet Version)](https://ifttt.com/applets/U7MjJfV3) applet (Recommended, but you could also make your own.)
-- [Pushbullet](https://www.pushbullet.com/) account
-- [Push2Run](https://www.push2run.com/) application
-- [Python 3.x](https://www.python.org/downloads/)
-  - [pynput](https://pypi.org/project/pynput/) module. TL:DR  `pip install pynput`
-  - and perhaps other non-standard modules (TBD)
+  - [Push2Run](https://www.push2run.com/) application
+  - [Python 3.x](https://www.python.org/downloads/)
+    - [pynput](https://pypi.org/project/pynput/) module. TL:DR  `pip install pynput`
+    - and perhaps other non-standard modules (TBD)
+- [Pushbullet](https://www.Pushbullet.com/) account
+- a smart device from which to send Pushbullet messages such as one of the below options
+  - a device with Amazon Alexa smart home assistant [FREE option]
+    - the [PC Pusher skill](http://pcpusher.s3-website.us-east-2.amazonaws.com/) (currently in beta)
+  - a device w/ Google Assistant [Potentially Free option]
+    - [IFTTT](https://ifttt.com/) account
+      - an applet to connect to the Pushbullet service such as the [Tell my computer to... (Pushbullet Version)](https://ifttt.com/applets/U7MjJfV3) applet
 - (optional) [NirCmd](https://www.nirsoft.net/utils/nircmd.html) for audial responses
 
 ## Setup
 
-1. Follow [these instructions](https://www.push2run.com/setup_pushbullet.html) to setup the connection from your Google Assistant to the Push2Run app you will install on your Windows computer.  Just with this alone you will already be able to do a lot as documented [with these example cards](https://push2run.com/examplecards.html); such as shutdown, reboot, google search, youtube search, open a program of your choice, etc.
+1. Install the [Push2Run](https://www.push2run.com/) application.
 
-2. (optional) "_Install_"[^2] **NirCmd** to enable synthesized "voice" responses from your computer.[^3]  It's a small command-line utility that allows you to do some useful tasks without displaying any user interface.  TBH, some of its functionality overlaps with this project's so if you wish, you can bypass python altogether by using Push2Run and NirCmd creatively.
+1. Setup one or both of these smart home device connections to your Pushbullet service.
+
+   1. **Alexa Route** Refer to the [PC Pusher website](http://pcpusher.s3-website.us-east-2.amazonaws.com/) for instructions.
+
+   1. **Google Route** Follow [these instructions](https://www.push2run.com/setup_Pushbullet.html).  With the completion of this step, you will be able to do a lot such as shutdown, reboot, google search, youtube search, open a program of your choice, etc.  See more [with these example cards](https://push2run.com/examplecards.html).
+
+1. (optional) "_Install_"[^2] **NirCmd** to enable synthesized "voice" responses from your computer.[^3]  It's a small command-line utility that allows you to do some useful tasks without displaying any user interface.  TBH, some of its functionality overlaps with this project's so if you wish, you can bypass python altogether by using Push2Run and NirCmd creatively.
 
    >It's recommended to copy the executable of NirCmd (nircmd.exe) to your windows directory, or to any other folder listed in your PATH environment variable, so you won't need to type the full path of nircmd in each time that you want to use it.
 
     You may need to run the executable at least once on its own to get past some initial prompt but I don't remember.
 
-3. Setup Push2Run (p2r) cards.  By this step, you should be ready to import (or create) cards that will facilitate the connection between Push2Run and these python project files.  To import, simply drag the included [Push2Run_type_cards.p2r](Push2Run_type_cards.p2r) file (a JSON file) into Push2Run.  Feel free to discard the file once imported.
+1. Setup Push2Run (p2r) cards.  By this step, you should be ready to import (or create) cards that will facilitate the connection between Push2Run and these python project files.  To import, simply drag the included [Push2Run_type_cards.p2r](Push2Run_type_cards.p2r) file (a JSON file) into Push2Run.  Feel free to discard the file once imported.
 
     <details><summary>Click here to see how to build your own cards.</summary>
     <p>
@@ -37,7 +50,6 @@ All requirements[^1] are *free*.  Paid versons of the accounts are unnecessary. 
     We'll start with the dictation card.
     With this, you'll be able to tell your computer to **type out** long sentences.
     ![image](https://user-images.githubusercontent.com/71462840/146619077-ebca46e2-0119-4d00-a05d-c976aa0ef4e0.png)
-
 
     ## __Command__ card
     Next is the command card.
@@ -55,7 +67,7 @@ All requirements[^1] are *free*.  Paid versons of the accounts are unnecessary. 
     <p>
 
     #### A brief Push2Run primer... 
-    * You will have setup spoken keyword(s) in IFTTT to indicate to Google Assistant which verbal commands to forward to PushBullet.  Moving forward, in our example scenarios, we will use the [recommended IFTTT applet's](https://ifttt.com/applets/U7MjJfV3) keywords "tell my comptuer to ~" which colloquially just makes sense.[^4]
+    * You will have setup spoken keyword(s) in IFTTT to indicate to Google Assistant which verbal commands to forward to Pushbullet.  Moving forward, in our example scenarios, we will use the [recommended IFTTT applet's](https://ifttt.com/applets/U7MjJfV3) keywords "tell my comptuer to ~" which colloquially just makes sense.[^4]
 
     * `$` represents your variable.  For example, let's say you've setup your Type card as below with "type $" as one of the entries in the 'Listen for' field...[^5]
 
