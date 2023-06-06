@@ -33,9 +33,9 @@ All requirements[^1] are *FREE*.  The only exceptions if you've already used you
 
 1. Setup one or both of these smart home device connections to your Pushbullet service.
 
-   1. **Alexa Route** Refer to the [PC Pusher website](http://pcpusher.s3-website.us-east-2.amazonaws.com/) for instructions.
+   - **Alexa Route** Refer to the [PC Pusher website](http://pcpusher.s3-website.us-east-2.amazonaws.com/) for instructions.
 
-   1. **Google Route** Follow [these instructions](https://www.push2run.com/setup_Pushbullet.html).  
+   - **Google Route** Follow [these instructions](https://www.push2run.com/setup_Pushbullet.html).  
 
    With the completion of these steps, you will be able to do a lot such as shutdown, reboot, google search, youtube search, open a program of your choice, etc.  See more [with these example cards](https://push2run.com/examplecards.html).
 
