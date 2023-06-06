@@ -2,8 +2,6 @@
 
 ## Demo
 
-<iframe id="YouTubeVideo" src="https://www.youtube.com/embed/2mzV1V0gVAE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 [![Voice-to-type demo video](https://img.youtube.com/vi/2mzV1V0gVAE/0.jpg)](https://www.youtube.com/watch?v=2mzV1V0gVAE)
 
 ### Description
