@@ -4,11 +4,12 @@
 
 [![Voice-to-type demo video](https://img.youtube.com/vi/2mzV1V0gVAE/0.jpg)](https://www.youtube.com/watch?v=2mzV1V0gVAE)
 
-### Description
+## Description
 
 A desire to dictate to my computer expanded to wanting to give my computer voice commands like I do my Android phone; thus this project's inception. I succeeded in creating something functional using python in combination with a number of free tools.  It isn't perfect and may not be competitive with Microsoft's pre-installed solution [Windows Speech Recognition](https://support.microsoft.com/en-us/windows/windows-speech-recognition-commands-9d25ef36-994d-f367-a81a-a326160128c7) but my method allows control from smart devices such as a smart phone or a smart home device which has far more widespread adoption; and which I find much more useful.  This project may also have applications for those who have impairments that hinder tactile computer input.
 
 ### Requirements
+
 All requirements[^1] are *free*.  Paid versions of the accounts are unnecessary.  The only exceptions would be the Pushbullet or IFTTT accounts if you've already used your free allotments.
 
 - Windows PC
