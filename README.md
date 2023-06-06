@@ -114,7 +114,7 @@ Please note the following
 * You can also delay commands with "wait|sleep|hold x seconds|minutes|hours".
   * Ex. `tell my computer to wait 30 seconds then press start button`-->
 
-- Although Google Assistant will handily detect in your speech when you meant to use punctuation, and I acknowledge it's a mouth-full but to explicitely indicate to my little script to produce a punctuation mark, you must say "mark" or "sign" afterwards.  For example: "open curly bracket mark x closed curly bracket sign" -> "{ x }"
+- Although Google Assistant will handily detect in your speech when you meant to use punctuation, and I acknowledge it's a mouth-full but to explicitely indicate to the script to produce a punctuation mark, you must say "mark" or "sign" afterwards.  For example: "open curly bracket mark x closed curly bracket sign" -> "{ x }"
 
 ### Typing
 
