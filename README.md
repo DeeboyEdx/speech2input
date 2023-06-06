@@ -18,14 +18,14 @@ All requirements[^1] are *FREE*.  The only exceptions if you've already used you
   - [Push2Run](https://www.push2run.com/) application
   - [Python 3.x](https://www.python.org/downloads/)
     - [pynput](https://pypi.org/project/pynput/) module. TL:DR  `pip install pynput`
+  - (optional) [NirCmd](https://www.nirsoft.net/utils/nircmd.html) for audial responses
 - [Pushbullet](https://www.Pushbullet.com/) account
-- a smart device from which to send Pushbullet messages such as one of the below options
-  - a device with Amazon Alexa smart home assistant [FREE option]
+- A smart device from which to send Pushbullet messages. (These are two options I've used)
+  - a device with Amazon Alexa smart home assistant [**recommended FREE option**]
     - with the [PC Pusher skill](http://pcpusher.s3-website.us-east-2.amazonaws.com/) (currently in beta)
   - a device with Google Assistant [Potentially Free option]
     - and an [IFTTT](https://ifttt.com/) account
       - with an applet that links your Google and Pushbullet services such as [Tell my computer to... (Pushbullet Version)](https://ifttt.com/applets/U7MjJfV3)
-- (optional) [NirCmd](https://www.nirsoft.net/utils/nircmd.html) for audial responses
 
 ## Setup
 
@@ -35,13 +35,11 @@ All requirements[^1] are *FREE*.  The only exceptions if you've already used you
 
    1. **Alexa Route** Refer to the [PC Pusher website](http://pcpusher.s3-website.us-east-2.amazonaws.com/) for instructions.
 
-   1. **Google Route** Follow [these instructions](https://www.push2run.com/setup_Pushbullet.html).  With the completion of this step, you will be able to do a lot such as shutdown, reboot, google search, youtube search, open a program of your choice, etc.  See more [with these example cards](https://push2run.com/examplecards.html).
+   1. **Google Route** Follow [these instructions](https://www.push2run.com/setup_Pushbullet.html).  With the completion of these steps, you will be able to do a lot such as shutdown, reboot, google search, youtube search, open a program of your choice, etc.  See more [with these example cards](https://push2run.com/examplecards.html).
 
-1. (optional) "*Install*"[^2] **NirCmd** to enable synthesized "voice" responses from your computer.[^3]  It's a small command-line utility that allows you to do some useful tasks without displaying any user interface.  TBH, some of its functionality overlaps with this project's so if you wish, you can bypass python altogether by using Push2Run and NirCmd creatively.
+1. (optional) "*Install*"[^2] **NirCmd** to enable synthesized "voice" responses from your computer.[^3]  It's a small command-line utility that allows you to do some useful tasks without displaying any user interface such as voice synthesis.
 
    >It's recommended to copy the executable of NirCmd (nircmd.exe) to your windows directory, or to any other folder listed in your PATH environment variable, so you won't need to type the full path of nircmd in each time that you want to use it.
-
-    You may need to run the executable at least once on its own to get past some initial prompt but I don't remember.
 
 1. Setup Push2Run (p2r) cards.  By this step, you should be ready to import (or create) cards that will facilitate the connection between Push2Run and these python project files.  To import, simply drag the included [Push2Run_type_cards.p2r](Push2Run_type_cards.p2r) file (a JSON file) into Push2Run.  Feel free to discard the file once imported.
 
@@ -178,7 +176,7 @@ Please note the following
 * type I see you exclamation mark after 3 minutes
 
 [^1]: Aside from the Windows PC and a device with Google Assistant, of course.  Both are ubiquitous but I recognize accessibility to these devices is not universal.
-[^2]: Just download and extract to the appropriate PATH directory.
+[^2]: Download and extract to a location in PATH directory OR this project's root folder.
 [^3]: Currently, audial responses are only used to confirm volume adjustments and to inform the user when a command was not understood.
 [^4]: I'm not fond of the confusing way IFTTT uses the terminology "connect" to either mean _to enable_ an applet or _to get_ one from their store of sorts.  Maybe it's just me.  That aside.  Thankfully if you choose to utilize the "applet" created by loneseeker777 called "[Tell my computer to... (Pushbullet Version)](https://ifttt.com/applets/U7MjJfV3)", you won't utilize one of your 3 (of 5?) free slots.  I know, it's not ideal but it's free.
 [^5]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes causing unexpected results.  As you may experience with the Volume cards later.
