@@ -8,17 +8,16 @@ Use your smart home device to dictate and send voice commands to you Windows com
 
 ## Description
 
-A desire to dictate to my computer expanded to wanting to give my computer voice commands like I do my Android phone; thus this project's inception. I succeeded in creating something functional using python in combination with a number of free tools.  It isn't perfect and may not be competitive with Microsoft's pre-installed solution [Windows Speech Recognition](https://support.microsoft.com/windows/windows-speech-recognition-commands-9d25ef36-994d-f367-a81a-a326160128c7) but my method allows control from smart devices such as a smart phone or a smart home device which has far more widespread adoption; and which I find much more useful.  This project may also have applications for those who have impairments that hinder tactile computer input.
+A desire to dictate to my computer expanded to wanting to use voice commands with my computer like I do my Android phone; thus this project's inception. I created something functional using python in combination with a number of free tools.  It may not be competitive with Microsoft's [Windows Speech Recognition](https://support.microsoft.com/windows/windows-speech-recognition-commands-9d25ef36-994d-f367-a81a-a326160128c7) solution, but my method allows control from smart devices which have widespread adoption, and I find it more useful.  This project may also have applications for those who have impairments that hinder tactile computer input.
 
 ### Requirements
 
-All requirements[^1] are *free*.  Paid versions of the accounts are unnecessary.  The only exceptions would be the Pushbullet or IFTTT accounts if you've already used your free allotments.
+All requirements[^1] are *FREE*.  The only exceptions would be the Pushbullet or IFTTT accounts if you've already used your free allotments.
 
 - Windows PC
   - [Push2Run](https://www.push2run.com/) application
   - [Python 3.x](https://www.python.org/downloads/)
     - [pynput](https://pypi.org/project/pynput/) module. TL:DR  `pip install pynput`
-    - and perhaps other non-standard modules (TBD)
 - [Pushbullet](https://www.Pushbullet.com/) account
 - a smart device from which to send Pushbullet messages such as one of the below options
   - a device with Amazon Alexa smart home assistant [FREE option]
