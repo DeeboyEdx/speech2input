@@ -12,7 +12,7 @@ A desire to dictate to my computer expanded to wanting to use voice commands wit
 
 ## Requirements
 
-All requirements are *FREE*[^1].  The only exceptions if you've already used your free allotments, would be the Pushbullet and/or IFTTT accounts.
+All requirements are *FREE*[^1].  The only exceptions is if you've already used your free allotments, would be the Pushbullet and/or IFTTT accounts.
 
 - Windows PC
   - [Push2Run](https://www.push2run.com/) application
