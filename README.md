@@ -49,8 +49,9 @@ All requirements are *FREE*[^1].  The only exceptions is if you've already used 
     - **Full Screen**<br>Pressed f key
     - **Full Screen and Play**<br>Presses f and space bar
     - **Type \***<br>Uses the `-v` or verbose flag to bypass command interpretation and simply type out the text
-    - **Computer! Do Things**<br>A catch-all card that attempts to interpret any messages didn't trigger a Push2Run card
-    - **No matching phrases**<br>Same as above<br><br>
+    - **Computer! Do Things**<br>A catch-all card that attempts to interpret as a command any messages which didn't trigger a Push2Run card
+    - **No matching phrases**<br>Same catch-all function as above
+    <br><br>
 
     <details><summary><strong>Click here to see how to build your own cards.</strong></summary>
 
