@@ -1,6 +1,6 @@
 # VOICE-TO-TYPE
 
-Use your smart home device to dictate and send voice commands to you Windows computer.
+Use your smart home device to command or dictate to you Windows computer.
 
 ## Demo Video
 
@@ -10,7 +10,7 @@ Use your smart home device to dictate and send voice commands to you Windows com
 
 A desire to dictate to my computer expanded to wanting to use voice commands with my computer like I do my Android phone; thus this project's inception. I created something functional using python in combination with a number of free tools.  It may not be competitive with Microsoft's [Windows Speech Recognition](https://support.microsoft.com/windows/windows-speech-recognition-commands-9d25ef36-994d-f367-a81a-a326160128c7) solution, but my method allows control from smart devices which have widespread adoption, and I find it more useful.  This project may also have applications for those who have impairments that hinder tactile computer input.
 
-## Requirements
+## Prerequisites
 
 All requirements are *FREE*[^1].  The only exceptions is if you've already used your free allotments, would be the Pushbullet and/or IFTTT accounts.
 
@@ -43,7 +43,19 @@ All requirements are *FREE*[^1].  The only exceptions is if you've already used 
 
 1. Setup Push2Run (p2r) cards.  By this step, you should be ready to import (or create) cards that will facilitate the connection between Push2Run and these python project files.  To import, simply drag the included [Push2Run_type_cards.p2r](Push2Run_type_cards.p2r) file (a JSON file) into your Push2Run client.  Feel free to discard the file once imported.
 
+   ### What will be imported
+
+    - **Pause/Play**<br>Presses space bar
+    - **Full Screen**<br>Pressed f key
+    - **Full Screen and Play**<br>Presses f and space bar
+    - **Type ***<br>Uses the `-v` or verbose flag to bypass command interpretation and simply type out the text
+    - **Computer! Do Things**<br>A catch-all card that attempts to interpret any messages didn't trigger a Push2Run card
+    - **No matching phrases**<br>Same as above<br><br>
+
     <details><summary><strong>Click here to see how to build your own cards.</strong></summary>
+
+    Note that all these cards are set to the "Hidden" window state which is important to prevent a terminal window from being shown.
+
     <p>
 
     ## **Type** card
@@ -104,6 +116,20 @@ All requirements are *FREE*[^1].  The only exceptions is if you've already used 
 
     </p>
     </details>
+
+## How to use directly
+
+Here's how to utilize these project files directly, without relying on Push2Run triggers.
+
+- To type out a string to your computer with basic formatting use...
+
+  `python type.py -v <string>`
+
+- To give your computer a command (see them listed below) use...
+
+  `python type.py <command>`
+
+  Note that these commands will execute immediately so if you wish to type on or control a particular application, you will need to either execute the command in a hidden window or use a delay timer.
 
 ## List of viable commands
 
