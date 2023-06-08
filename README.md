@@ -100,11 +100,11 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
     <details><summary>Read an additional brief Push2Run primer...</summary>
     <p>
 
-    By this point, you will have an invocation keyword set up to indicate to your digital assistant to forward commands through your Pushbullet service which will be captured by Push2Run.  In this readme's example scenarios, we will use the "tell my comptuer to ~" keywords (the default for both proposed routes) which colloquially just makes sense.
+    By this point, you will have an invocation keyword set up to indicate to your digital assistant to forward commands through your Pushbullet service which will be captured by Push2Run.  In this readme's example scenarios, we will use the "tell my computer to ~" keywords (the default for both proposed routes) which colloquially just makes sense.
 
     - `$` represents your variable.  For example, let's say you've setup your Type card as below with "type $" as one of the entries in the 'Listen for' field...[^4]
 
-       You say: "*tell my comptuer to* type **it is a lovely day period mark**"
+       You say: "*tell my computer to* type **it is a lovely day period mark**"
 
        type.py will recieve: "-v **it is a lovely day period mark**" (-v being the verbose flag) which it will then format the string nicely and simulate the key presses to type it out on your computer.  "**It is a lovely day.**"
 
