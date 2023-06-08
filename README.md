@@ -55,13 +55,13 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
    ### What cards will be imported
 
     - **Pause/Play**<br>Presses space bar
-    - **Full Screen**<br>Pressed f key
+    - **Full Screen**<br>Presses f key
     - **Full Screen and Play**<br>Presses f and space bar
-    - **Type \***<br>Uses the `-v` or verbose flag to bypass command interpretation and simply type out the text
-    - **Computer! Do Things**<br>A catch-all card that attempts to interpret as a command any messages which didn't trigger a Push2Run card
+    - **Type \***<br>Bypass command interpretation to simply type out the supplied text
+    - **Computer! Do Things**<br>A catch-all card. Attempts to interpret any messages which didn't trigger a Push2Run card as a command.
     - **No matching phrases**<br>Same catch-all function as above
 
-1. Modify the path in the Parameter field to the location on your computer.  In the provided cards, the path is `C:\Scripts\python\type\`.  This can be done either before or after importing.
+1. Modify the path in the Parameter field to the directory on your computer.  In the provided cards, the path is `C:\Scripts\python\type\`.  This can be done either before or after importing.
     <br><br>
 
     <details><summary><strong>Click here to see how to build your own cards.</strong></summary>
