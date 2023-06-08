@@ -12,7 +12,7 @@ A desire to dictate to my computer expanded to wanting to use voice commands wit
 
 ## Prerequisites
 
-All requirements are *FREE*[^1].  The only exceptions is if you've already used your free allotments, would be the Pushbullet and/or IFTTT accounts.
+All requirements are *FREE*[^1].  The only exceptions are if you've already used your free allotments, would be the Pushbullet and/or IFTTT accounts.
 
 - Windows PC
   - [Push2Run](https://www.push2run.com/) application
@@ -33,13 +33,22 @@ All requirements are *FREE*[^1].  The only exceptions is if you've already used 
 
 1. Setup one or both of these smart home device connections to your Pushbullet service.
 
-   - **Alexa Route** Refer to the [PC Pusher website](http://pcpusher.s3-website.us-east-2.amazonaws.com/) for instructions.
+   - **Alexa Route**: Refer to the [PC Pusher website](http://pcpusher.s3-website.us-east-2.amazonaws.com/) for instructions.
 
-   - **Google Route** Follow [these instructions](https://www.push2run.com/setup_Pushbullet.html).  
+   - **Google Route**: Follow [these instructions](https://www.push2run.com/setup_Pushbullet.html).  
 
    With the completion of these steps, you will be able to do a lot such as shutdown, reboot, google search, youtube search, open a program of your choice, etc.  See more [with these example cards](https://push2run.com/examplecards.html).
 
-1. (optional) "*Install*"[^2] **NirCmd** to enable synthesized "voice" responses from your computer.[^3]  This is a small command-line utility that allows you to do some useful tasks without displaying any user interface such as voice synthesis.
+1. Download this project's files to a directory of your choosing.  Take note of it as you will need it later.
+   - change_audio_volume.py
+   - dee_logging.py
+   - keypress_functions.py
+   - type.py
+   - Push2Run_type_cards.p2r (optional)
+
+   *The other files are unnecessary.*
+
+1. (optional) "*Install*"[^2] **NirCmd** to enable synthesized "voice" responses from your computer.[^3]  This is a small command-line utility that allows you to do some useful tasks such as voice synthesis.
 
 1. Setup Push2Run (p2r) cards.  By this step, you should be ready to import (or create) cards that will facilitate the connection between Push2Run and these python project files.  To import, simply drag the included [Push2Run_type_cards.p2r](Push2Run_type_cards.p2r) file (a JSON file) into your Push2Run client.  Feel free to discard the file once imported.
 
@@ -51,6 +60,8 @@ All requirements are *FREE*[^1].  The only exceptions is if you've already used 
     - **Type \***<br>Uses the `-v` or verbose flag to bypass command interpretation and simply type out the text
     - **Computer! Do Things**<br>A catch-all card that attempts to interpret as a command any messages which didn't trigger a Push2Run card
     - **No matching phrases**<br>Same catch-all function as above
+
+1. Modify the path in the Parameter field to the location on your computer.  In the provided cards, the path is `C:\Scripts\python\type\`.  This can be done either before or after importing.
     <br><br>
 
     <details><summary><strong>Click here to see how to build your own cards.</strong></summary>
