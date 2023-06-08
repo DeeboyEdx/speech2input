@@ -111,7 +111,8 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
     - within the "Listen for" field, the `*` is a throw-away catch-all.  It's only purpose is for matching miscellaneous phrases, not for capturing text.  For example...
       1. You say: "*tell my computer to* lower the gosh darn **volume to 20 percent**"
       1. Push2Run will match and throw away "lower the gosh darn".
-      1. And pass long "**volume to 20 percent**" to the script.
+      1. Match the "**volume**" keyword to the 'Change Volume' card.
+      1. And pass long "**to 20 percent**" to the script.
 
     </p>
     </details><br>
