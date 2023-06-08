@@ -61,7 +61,7 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
     - **Computer! Do Things**<br>A catch-all card. Attempts to interpret any messages which didn't trigger a Push2Run card as a command.
     - **No matching phrases**<br>Same catch-all function as above
 
-1. Change the path in the *Parameter* field to the directory of your choosing from step 3 where you've placed this project's files.  In the provided cards, the path is `C:\Scripts\python\type\`.  This can be done either in the p2r file before importing, or after importing within the Push2Run GUI.
+1. Change the path in the *Parameter* field to the directory of your choosing from step 3, where you've placed this project's files.  In the provided cards, the path is `C:\Scripts\python\type\`.  This can be done either in the p2r file before importing, or after importing within the Push2Run GUI.
     <br><br>
 
     <details><summary><strong>Click here to see how to build your own cards.</strong></summary>
@@ -81,7 +81,7 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
     ## **Command** card
 
     Next is the command card.
-    With this, you'll be able to tell your computer to **perform** a multitude of physical inputs, either colloquially "minimize" or literally "press alt space n".  See [more](#literal).
+    With this, you'll be able to tell your computer to **perform** a multitude of physical inputs, either colloquially (ex. "minimize") or literally (ex. "press alt space n").  See [more](#literal).
 
     ![Command card example](https://user-images.githubusercontent.com/71462840/146622849-f7a05af8-faef-4a3b-991c-d41e045781b2.png)
     <br><br>
