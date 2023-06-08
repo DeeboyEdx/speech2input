@@ -89,7 +89,7 @@ All requirements are *FREE*[^1].  The only exceptions is if you've already used 
     <details><summary>Read an additional brief Push2Run primer...</summary>
     <p>
 
-    - By this point, you will have an invocation keyword setup to indicate to your digital assistant to forward commands through your Pushbullet service which will be captured by Push2Run.  In this readme's example scenarios, we will use the "tell my comptuer to ~" keywords which colloquially just makes sense.
+    By this point, you will have an invocation keyword set up to indicate to your digital assistant to forward commands through your Pushbullet service which will be captured by Push2Run.  In this readme's example scenarios, we will use the "tell my comptuer to ~" keywords which colloquially just makes sense.
 
     - `$` represents your variable.  For example, let's say you've setup your Type card as below with "type $" as one of the entries in the 'Listen for' field...[^4]
 
