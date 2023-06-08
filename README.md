@@ -90,9 +90,9 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
 
     With these cards, you'll be able to tell your computer to change the volume.  You can also tell it to mute, un-mute, toggle mute, or even to "shut up".  I'm still working out the kinks for this one so I did not include a card for volume adjustments in the included p2r file.
 
-    ![Volume card example](https://user-images.githubusercontent.com/71462840/146622938-419fec15-63c8-4a9c-a6f7-5e415f2c93ab.png)
+    Note that there are two cards as I found it more successful to separate them like so.
 
-    Note that there are two cards as I found it more successful to separate them like this.
+    ![Volume card example](https://user-images.githubusercontent.com/71462840/146622938-419fec15-63c8-4a9c-a6f7-5e415f2c93ab.png)
 
     </p>
     </details>
