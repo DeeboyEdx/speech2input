@@ -1,6 +1,6 @@
 # VOICE-TO-TYPE
 
-Use your smart home device to command or dictate to you Windows computer.
+Use your smart home device to command or dictate to your Windows computer.
 
 ## Demo Video
 
