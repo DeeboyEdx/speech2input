@@ -43,12 +43,12 @@ All requirements are *FREE*[^1].  The only exceptions is if you've already used 
 
 1. Setup Push2Run (p2r) cards.  By this step, you should be ready to import (or create) cards that will facilitate the connection between Push2Run and these python project files.  To import, simply drag the included [Push2Run_type_cards.p2r](Push2Run_type_cards.p2r) file (a JSON file) into your Push2Run client.  Feel free to discard the file once imported.
 
-   ### What will be imported
+   ### What cards will be imported
 
     - **Pause/Play**<br>Presses space bar
     - **Full Screen**<br>Pressed f key
     - **Full Screen and Play**<br>Presses f and space bar
-    - **Type ***<br>Uses the `-v` or verbose flag to bypass command interpretation and simply type out the text
+    - **Type \***<br>Uses the `-v` or verbose flag to bypass command interpretation and simply type out the text
     - **Computer! Do Things**<br>A catch-all card that attempts to interpret any messages didn't trigger a Push2Run card
     - **No matching phrases**<br>Same as above<br><br>
 
