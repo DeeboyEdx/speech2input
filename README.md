@@ -61,7 +61,7 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
     - **Computer! Do Things**<br>A catch-all card. Attempts to interpret any messages which didn't trigger a Push2Run card as a command.
     - **No matching phrases**<br>Same catch-all function as above
 
-1. Change the path in the *Parameter* field to the directory of your choosing form step 3 where you've placed this project's files.  In the provided cards, the path is `C:\Scripts\python\type\`.  This can be done either before or after importing.
+1. Change the path in the *Parameter* field to the directory of your choosing from step 3 where you've placed this project's files.  In the provided cards, the path is `C:\Scripts\python\type\`.  This can be done either in the p2r file before importing, or after importing within the Push2Run GUI.
     <br><br>
 
     <details><summary><strong>Click here to see how to build your own cards.</strong></summary>
