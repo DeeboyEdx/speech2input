@@ -124,7 +124,7 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
     - [x] *You must be logged into your computer for most (if not all) actions to succeed.*
     - [x] A Digital assistant's attention span is short. So, commands must be swift and to the point.
       - [x] As such, performing multiple or complex actions utilization of this project may prove difficult.  Thankfully the Alexa method has a follow-up mode which alleviates this pressure.
-    - [x] Giving literal key-press commands can be tricky to near impossible as it is wholly dependent on what the digital assistant *thinks* it heard and their tendency to listen for colloquial language.  For example, it may hear "end" when you say "n".  I try to work with this by providing an equivalency dictionary but it isn't perfect.
+    - [x] Giving literal key-press commands can be tricky to near impossible as it is wholly dependent on what the digital assistant *thinks* it heard with their tendency to listen for natural spoken language.  For example, it may hear "end" when you say "n".  I try to work with this by providing an equivalency dictionary but it isn't perfect.
     - [ ] Log file location may differ depending on whether script is executed from console[^5] or by Push2Run.
 
     </p>
