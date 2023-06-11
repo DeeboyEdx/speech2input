@@ -79,5 +79,7 @@ logging_function_switch = {
 }
 
 def log(string="", logging_level="DEBUG"):
-    try: logging_function_switch.get(logging_level, logging.WARNING)(string)
-    except: print("Logging failed")
+    try: 
+        logging_function_switch.get(logging_level, logging.WARNING)(string)
+    except Exception as e: 
+        print(f"Logging failed: {e}")

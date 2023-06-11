@@ -15,7 +15,7 @@ from os import system # for the _speak function
 import subprocess # replacing os.system for the _speak function
 
 # Set this "dbug" variable to 1 to see console output (when run from a CLI).  Set it to 0 to silence superfluous output.
-dbug = 1 #(True) or 0 (False)
+dbug = 0 #(True) or 0 (False)
 # This variable sets the minimum logging level. Options: NOTSET, DEBUG, INFO, WARNING, ERROR, or CRITICAL.  NOTSET being the most verbose.
 # All log levels "above" the set level will also show.  Ex. If set to INFO, WARNING logs will also show.
 logging_level = dl.logging.INFO
@@ -128,6 +128,10 @@ possibleSingleLetterMisinterpretations = {
     "nine" : "9",
 }
 mark_signs = {
+    'backtick'    : '`',
+    'unapostrophe': '`',
+    'back quote'  : '`',
+    'backquote '  : '`',
     "tilda"   : '~',
     "at"      : '@',
     "hashtag" : '#',
@@ -444,11 +448,57 @@ def toSentence(string):
 
 def typeSentences(string):
     # Types out inputted string, taking care to not include any known return language at the end.  Ex. "The brown fox. Enter"
+    # working on New way of doing it
+    # Limitation: each keyword is checked in word num order, so multi-key cases such as where the same keyword is used twice or a multi-word keyword is ued after a singular one won't be recognized
+    dbugprint('='*50 + f"\nINPUT: {string}\n")
+    ending_key_to_press = []
+    ending_keys = {
+        kf.Key.enter : ['enter','return','send', 'new line', 'next line', 'hit return', 'press return'],#, 'hit enter', 'press enter'],
+        kf.Key.tab   : ['tab', 'next cell']#, 'hit tab', 'press tab']
+    }
+    strike_keywords = ['hit', 'press']
+    for key in ending_keys:
+        keywords_sorted_by_num_of_words = sorted(ending_keys[key], key=lambda x: len(x.split()), reverse=True)
+        for keyword in keywords_sorted_by_num_of_words:
+            keyword = " " + keyword
+            flag = False
+            while string.lower().endswith(keyword):
+                if key.name == keyword.strip():
+                    for striker in strike_keywords:
+                        striker_n_keyword = f" {striker}{keyword}"
+                        dbugprint(f"checking striker: {striker_n_keyword} AGAINST {string}")
+                        if string.lower().endswith(striker_n_keyword):
+                            dbugprint('STRIKER MATCHED!')
+                            dbugprint(f"REMOVING striker + {keyword.strip()} and hitting {key}")
+                            string = string[0:-len(striker_n_keyword)]
+                            ending_key_to_press.insert(0,key)
+                            flag = True
+                            break
+                    if flag:
+                        flag = False
+                        continue
+                dbugprint(f"removing {keyword.strip()} and hitting {key}")
+                string = string[0:-len(keyword)]
+                ending_key_to_press.insert(0,key)
+    dbugprint(f'OUTPUT: "{string}"\n')
+    for char in string:
+        kf.tap(char)
+        random_sleep_time_in_s = random.uniform(0.0, 0.01)
+        sleep(random_sleep_time_in_s)
+    for key in ending_key_to_press:
+        dbugprint(f"TAPPING {key}")
+        kf.tap(key)
+    return
+
+    # replaced with method above
     single_word_return_keywords = ['enter','return','send']
     dual_word_return_keywords   = ['new line', 'next line', 'hit return', 'hit enter']
     last_word_means_Enter      =            string.split()[-1].lower() in single_word_return_keywords
     last_two_words_means_Enter = ' '.join(string.split()[-2:]).lower() in dual_word_return_keywords
+    return_keywords = single_word_return_keywords + dual_word_return_keywords
     hit_Enter_after_typing = last_word_means_Enter or last_two_words_means_Enter
+    
+
     if hit_Enter_after_typing:
         if last_two_words_means_Enter:
             dbugprint("removing last two words and hitting ENTER")

@@ -283,4 +283,7 @@ def main():
     
     _do(_setVolume, percentage)
 
-main()
+if __name__ == "__main__":
+    main()
+    from time import sleep
+    sleep(3)
