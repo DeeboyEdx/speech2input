@@ -207,10 +207,10 @@ def do_change_input_lang():
 def do_change_input_lang_back():
     press([Key.ctrl, Key.cmd, Key.space])
 
-def do_change_intput_lang_to_EN():
+def do_change_input_lang_to_EN():
     press([Key.ctrl, '1'])
 
-def do_change_intput_lang_to_JP():
+def do_change_input_lang_to_JP():
     press([Key.ctrl, Key.shift, '1'])
 
 def do_show_notification():
