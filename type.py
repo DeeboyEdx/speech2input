@@ -443,12 +443,44 @@ def swap_in_symbols(string):
                     string = insensitive_hippo.sub(MARK_SIGNS[symbol], string)
     return string
 
-# trying out an "optimized" approach suggested by chatgpt after wrestling with it for a while.
+# trying out an "optimized" approach developed based on a suggestion by chatgpt
 def swap_in_symbols_new(input_string):
-    # this version doesn't account for variations in the way the user might say the symbol (ex. "percent sign" vs "percent symbol")
-    # this version doesn't account for possible misinterpretations of "close" as "clothes" or "closed" (ex. "close bracket" vs "clothes bracket")
-    # work on those later
-    full_mark_signs_dict = {key + " sign": value for key, value in MARK_SIGNS.items()} | {key + " mark": value for key, value in MARK_SIGNS.items()}
+    """
+    Replace words representing symbols in the input string with their corresponding symbols.
+
+    This function takes an input string and replaces specific words representing symbols with their actual symbols. It also accounts for possible misinterpretations of "open" and "close" words by creating variations for each key starting with "open " or "close ".
+    
+    Args:
+        input_string (str): The input string possibly containing words representing symbols.
+    
+    Returns:
+        str: The modified input string with words replaced by their corresponding symbols.
+
+    Example:
+        >>> input_string = "Please use the percent sign when writing code."
+        >>> swap_in_symbols_new(input_string)
+        'Please use the % when writing code.'
+    """
+    # accounting for possible misinterpretations of "open" and "close" (ex. "close bracket" vs "clothes bracket")
+    updated_mark_signs = {}
+    # Function to add variations to the dictionary
+    def add_variations(key, value, variations):
+        updated_mark_signs[key] = value
+        for variation in variations:
+            updated_key = ' '.join([variation] + key.split()[1:])
+            updated_mark_signs[updated_key] = value
+    # Iterate through the original dictionary and add variations as needed
+    for key, value in MARK_SIGNS.items():
+        if key.startswith('open '):
+            add_variations(key, value, ['opened', 'opens'])
+        elif key.startswith('close '):
+            add_variations(key, value, ['closed', 'closes', 'clothes'])
+        else:
+            updated_mark_signs[key] = value
+    # expanding signs dict with "sign", "mark" and "symbol" endings for each key
+    full_mark_signs_dict = {key + " sign": value for key, value in updated_mark_signs.items()} \
+                           | {key + " mark": value for key, value in updated_mark_signs.items()} \
+                           | {key + " symbol": value for key, value in updated_mark_signs.items()}
     pattern = '|'.join(r'\b{}\b'.format(re.escape(key)) for key in full_mark_signs_dict.keys())
     regex = re.compile(pattern)
     return regex.sub(lambda match: full_mark_signs_dict[match.group()], input_string)
@@ -474,7 +506,7 @@ def toSentence(string):
     # Ex. "hi . . ." -> "hi..." Whereas above FOR loop would do "hi. . ." 
     string = re.sub(r'\s+([,?.!"])', r'\1', string)
     # self-explanatory. Ex "here's a percent sign sign" -> "here's a % sign"
-    string = swap_in_symbols(string)
+    string = swap_in_symbols_new(string)
     # capitalizing all instances of i'm, i'll, etc.
     string = string.replace("i'", "I'")
     return string
