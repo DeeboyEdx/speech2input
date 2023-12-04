@@ -623,7 +623,7 @@ def swap_in_synonyms(string):
     return string
 
 def remove_symbols(command):
-    return re.sub('\s?[!-/]|\s?[\[-`]', '', command).lstrip()
+    return re.sub(r'\s?[!-/]|\s?[\[-`]', '', command).lstrip()
 
 def get_best_guess_and_confidence(command):
     dbugprint(f"Figuring best guess for \"{command}\"", logging_level="INFO")
@@ -710,13 +710,14 @@ def findMultiplierString(string):
             break
     # Looking for the keyword that indicates a multiplier phrase
     # Edit: Instead of adding 'X' to the list, I added the IGNORECASE flag.  I'm not expecting bugs but I'm taking note of this change here in case it does cause bugs.
-    for times in ['\*', 'x', 'times']:
-        found = re.search(f"(\w+) +{times}", string, flags=re.IGNORECASE)
+    for times in [r'\*', 'x', 'times']:
+        found = re.search(f"(\\w+) +{times}", string, flags=re.IGNORECASE)
         if found:
             n = inferNumber(found.group(1))
             if n:
                 if not multiplier_string:
                     multiplier_string = found.group()
+                dbugprint(f"Repeating {n} time(s)", logging_level="INFO")
                 return (multiplier_string, n)
     return False
 
