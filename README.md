@@ -37,7 +37,7 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
 
    - (deprecated) **Google Route**: Follow [these instructions](https://www.push2run.com/setup_Pushbullet.html).  
 
-   With the completion of these steps, you will be able to do a lot such as shutdown, reboot, google search, youtube search, open a program of your choice, etc.  See more [with these example cards](https://push2run.com/examplecards.html).
+   With the completion of these steps, you will already be able to do a lot of things such as shutdown, reboot, google search, youtube search, open a program of your choice, etc.  See more [with these example cards](https://push2run.com/examplecards.html).
 
 1. Install python. I recommend checking the "Add python.exe to PATH" check box.
 
@@ -63,7 +63,7 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
     - **Computer! Do Things**<br>A catch-all card. Attempts to interpret any messages which didn't trigger a Push2Run card as a command.
     - **No matching phrases**<br>Same catch-all functionality as above card
 
-1. Change the path in the *Parameter* field to the directory of your choosing from step 3, where you've placed this project's files.  In the provided cards, the path is `C:\Scripts\python\type\`.  This can be done either in the p2r file before importing, or after importing within Push2Run's GUI.
+1. Change the path in the cards' *Parameter* field to the directory you chose in step 4, where you've placed this project's files.  This can be done either in the p2r file before importing, or after importing within Push2Run's GUI.  In the provided cards, the path is set to `C:\Scripts\python\type\`.
     <br><br>
 
     <details><summary><strong>Click here to see how to build your own cards.</strong></summary>
@@ -108,7 +108,7 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
 
        You say: "*tell my computer to* type **it is a lovely day period mark**"
 
-       type.py will recieve: "-v **it is a lovely day period mark**" (-v being the verbose flag) which it will then format the string nicely and simulate the key presses to type it out on your computer.  "**It is a lovely day.**"
+       type.py will recieve: "-v **it is a lovely day period mark**" (-v being the verbatim flag) which it will then format the string nicely and simulate the key presses to type it out on your computer.  "**It is a lovely day.**"
 
     - within the "Listen for" field, the `*` is a throw-away catch-all.  It's only purpose is for matching miscellaneous phrases, not for capturing text.  For example...
       1. You say: "*tell my computer to* lower the gosh darn **volume to 20 percent**"
