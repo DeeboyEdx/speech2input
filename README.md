@@ -21,11 +21,11 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
   - (optional) [NirCmd](https://www.nirsoft.net/utils/nircmd.html) for audial responses
 - [Pushbullet](https://www.Pushbullet.com/) account
 - A smart device from which to send Pushbullet messages. (These are two options I've used)
-  - a device with Amazon Alexa smart home assistant [**recommended FREE option**]
-    - with the [PC Pusher skill](http://pcpusher.s3-website.us-east-2.amazonaws.com/) (currently in beta)
+  - an Amazon Echo smart home assistant [**recommended FREE option**]
+    - with the [PC Commander skill](https://pccommander.net/) (currently in beta)
   - a device with Google Assistant [Potentially Free option]
     - and an [IFTTT](https://ifttt.com/) account
-      - with an applet that links your Google and Pushbullet services such as [Tell my computer to... (Pushbullet Version)](https://ifttt.com/applets/U7MjJfV3)
+      - with an applet that links your Google and Pushbullet services
 
 ## Setup
 
@@ -33,7 +33,7 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
 
 1. Setup one or both of these smart home device connections to your Pushbullet service.
 
-   - **Alexa Route**: Refer to the [PC Pusher website](http://pcpusher.s3-website.us-east-2.amazonaws.com/) for instructions.
+   - **Alexa Route**: Refer to the [PC Commander website](http://pccommander.net/) for instructions.
 
    - **Google Route**: Follow [these instructions](https://www.push2run.com/setup_Pushbullet.html).  
 
