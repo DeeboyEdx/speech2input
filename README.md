@@ -35,11 +35,13 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
 
    - **Alexa Route**: Refer to the [PC Commander website](http://pccommander.net/) for instructions.
 
-   - **Google Route**: Follow [these instructions](https://www.push2run.com/setup_Pushbullet.html).  
+   - (deprecated) **Google Route**: Follow [these instructions](https://www.push2run.com/setup_Pushbullet.html).  
 
    With the completion of these steps, you will be able to do a lot such as shutdown, reboot, google search, youtube search, open a program of your choice, etc.  See more [with these example cards](https://push2run.com/examplecards.html).
 
-1. Download this project's files to a directory of your choosing.  Take note of it as you will need it later.
+1. Install python. I recommend checking the "Add python.exe to PATH" check box.
+
+1. Download this project's files to a directory of your choosing.  Take note of the path as you will need it later.
    - change_audio_volume.py
    - dee_logging.py
    - keypress_functions.py
@@ -59,9 +61,9 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
     - **Full Screen and Play**<br>Presses f and space bar
     - **Type \***<br>Bypass command interpretation to simply type out the supplied text
     - **Computer! Do Things**<br>A catch-all card. Attempts to interpret any messages which didn't trigger a Push2Run card as a command.
-    - **No matching phrases**<br>Same catch-all function as above
+    - **No matching phrases**<br>Same catch-all functionality as above card
 
-1. Change the path in the *Parameter* field to the directory of your choosing from step 3, where you've placed this project's files.  In the provided cards, the path is `C:\Scripts\python\type\`.  This can be done either in the p2r file before importing, or after importing within the Push2Run GUI.
+1. Change the path in the *Parameter* field to the directory of your choosing from step 3, where you've placed this project's files.  In the provided cards, the path is `C:\Scripts\python\type\`.  This can be done either in the p2r file before importing, or after importing within Push2Run's GUI.
     <br><br>
 
     <details><summary><strong>Click here to see how to build your own cards.</strong></summary>
