@@ -6,9 +6,11 @@ Use your smart home device to command or dictate to your Windows computer.
 
 [![Voice-to-type demo video](https://img.youtube.com/vi/2mzV1V0gVAE/0.jpg)](https://www.youtube.com/watch?v=2mzV1V0gVAE)
 
-## Description
+## Project Description
 
-A desire to dictate to my computer expanded to wanting to use voice commands with my computer like I do my Android phone; thus this project's inception. I created something functional using python in combination with a number of free tools.  It may not be competitive with Microsoft's [Windows Speech Recognition](https://support.microsoft.com/windows/windows-speech-recognition-commands-9d25ef36-994d-f367-a81a-a326160128c7) solution, but my method allows control from smart devices which have widespread adoption, and I find it more useful.  This project may also have applications for those who have impairments that hinder tactile computer input.
+This project originated from a simple desire to dictate to my computer, evolving into a quest for voice command functionality akin to my experience with my Android phone. Through the amalgamation of Python and various free tools, I crafted a functional solution. While it may not rival Microsoft's Windows Speech Recognition, my approach enables control from smart devices with widespread adoption, offering a personally more valuable experience. Additionally, this project could prove beneficial for individuals facing tactile input impairments, extending its potential applications beyond conventional use.
+
+[Windows Speech Recognition](https://support.microsoft.com/windows/windows-speech-recognition-commands-9d25ef36-994d-f367-a81a-a326160128c7)
 
 ## Prerequisites
 
