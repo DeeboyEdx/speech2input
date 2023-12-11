@@ -108,7 +108,7 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
 
        You say: "*tell my computer to* type **it is a lovely day period mark**"
 
-       type.py will recieve: "-v **it is a lovely day period mark**" (-v being the verbatim flag) which it will then format the string nicely and simulate the key presses to type it out on your computer.  "**It is a lovely day.**"
+       type.py will receive: "-v **it is a lovely day period mark**" (-v being the verbatim flag) which it will then format the string nicely and simulate the key presses to type it out on your computer.  "**It is a lovely day.**"
 
     - within the "Listen for" field, the `*` is a throw-away catch-all.  It's only purpose is for matching miscellaneous phrases, not for capturing text.  For example...
       1. You say: "*tell my computer to* lower the gosh darn **volume to 20 percent**"
@@ -150,7 +150,7 @@ Here's how to utilize these project files directly, without relying on Push2Run 
 
 Please note the following
 
-- You can chain commands together with delimeters "and", and "then".[^6]
+- You can chain commands together with delimiters "and", and "then".[^6]
 <!-- Actually this isn't working now.  Gotta debug.
 * You can also delay commands with "wait|sleep|hold x seconds|minutes|hours".
   * Ex. `tell my computer to wait 30 seconds then press start button`-->
@@ -244,4 +244,4 @@ Please note the following
 [^3]: Currently, audial responses are only used to confirm volume adjustments and to inform the user when a command was not understood.
 [^4]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes causing unexpected results.  As you may experience with the Volume cards later.
 [^5]: To execute from console do `python type.py DESIRED COMMAND HERE`.  Use the `-v` argument to avoid interpretation and simply dictate.  `python type.py -v DESIRED SENTENCE HERE`  You may choose to use quotations around your command (`"DESIRED COMMAND"`) if you wish.
-[^6]: Actually by default, Push2Run also uses "and" as a delimeter to separate commands.  Given that setting, I acknowledge that the "Full Screen and Play" card is redundant when you have separate "Full Screen" and "Pause/Play (press Spacebar)" cards.
+[^6]: Actually by default, Push2Run also uses "and" as a delimiter to separate commands.  Given that setting, I acknowledge that the "Full Screen and Play" card is redundant when you have separate "Full Screen" and "Pause/Play (press Space bar)" cards.
