@@ -1,3 +1,4 @@
-type.log
-*.ffs_*
 __pycache__
+*.log
+*.code-workspace
+notetoself.txt

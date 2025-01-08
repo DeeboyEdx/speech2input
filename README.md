@@ -1,10 +1,10 @@
-# VOICE-TO-TYPE
+# speech2input
 
 Use your smart home device to command or dictate to your Windows computer.
 
 ## Demo Video
 
-[![Voice-to-type demo video](https://img.youtube.com/vi/2mzV1V0gVAE/0.jpg)](https://www.youtube.com/watch?v=2mzV1V0gVAE)
+[![demo video](https://img.youtube.com/vi/2mzV1V0gVAE/0.jpg)](https://www.youtube.com/watch?v=2mzV1V0gVAE)
 
 ## Project Description
 
@@ -45,14 +45,14 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
    - change_audio_volume.py
    - dee_logging.py
    - keypress_functions.py
-   - type.py
-   - Push2Run_type_cards.p2r (optional)
+   - main.py
+   - Push2Run_s2i_cards.p2r (optional)
 
    *The other files are unnecessary.*
 
 1. (optional) "*Install*"[^2] **NirCmd** to enable synthesized "voice" responses from your computer.[^3]  This is a small command-line utility that allows you to do some useful tasks such as voice synthesis.
 
-1. Setup Push2Run (p2r) cards.  By this step, you should be ready to import (or create) cards that will facilitate the connection between Push2Run and these python project files.  To import, simply drag the included [Push2Run_type_cards.p2r](Push2Run_type_cards.p2r) file (a JSON file) into your Push2Run client.  Feel free to discard the file once imported.
+1. Setup Push2Run (p2r) cards.  By this step, you should be ready to import (or create) cards that will facilitate the connection between Push2Run and these python project files.  To import, simply drag the included [Push2Run_s2i_cards.p2r](Push2Run_s2i_cards.p2r) file (a JSON file) into your Push2Run client.  Feel free to discard the file once imported.
 
    ### What cards will be imported
 
@@ -63,7 +63,7 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
     - **Computer! Do Things**<br>A catch-all card. Attempts to interpret any messages which didn't trigger a Push2Run card as a command.
     - **No matching phrases**<br>Same catch-all functionality as above card
 
-1. Change the path in the cards' *Parameter* field to the directory you chose in step 4, where you've placed this project's files.  This can be done either in the p2r file before importing, or after importing within Push2Run's GUI.  In the provided cards, the path is set to `C:\Scripts\python\type\`.
+1. Change the path in the cards' *Parameter* field to the directory you chose in step 4, where you've placed this project's files.  This can be done either in the p2r file before importing, or after importing within Push2Run's GUI.  In the provided cards, the path is set to `C:\Scripts\python\speech2input\`.
     <br><br>
 
     <details><summary><strong>Click here to see how to build your own cards.</strong></summary>
@@ -108,7 +108,7 @@ All requirements are *FREE*[^1].  The only exceptions are if you've already used
 
        You say: "*tell my computer to* type **it is a lovely day period mark**"
 
-       type.py will receive: "-v **it is a lovely day period mark**" (-v being the verbatim flag) which it will then format the string nicely and simulate the key presses to type it out on your computer.  "**It is a lovely day.**"
+       main.py will receive: "-v **it is a lovely day period mark**" (-v being the verbatim flag) which it will then format the string nicely and simulate the key presses to type it out on your computer.  "**It is a lovely day.**"
 
     - within the "Listen for" field, the `*` is a throw-away catch-all.  It's only purpose is for matching miscellaneous phrases, not for capturing text.  For example...
       1. You say: "*tell my computer to* lower the gosh darn **volume to 20 percent**"
@@ -138,11 +138,11 @@ Here's how to utilize these project files directly, without relying on Push2Run 
 
 - To type out a string to your computer with basic formatting use...
 
-  `python type.py -v <string>`
+  `python main.py -v <string>`
 
 - To give your computer a command ([for example these](#list-of-viable-commands)) use...
 
-  `python type.py <command>`
+  `python main.py <command>`
 
   Note that these commands will execute immediately so if you wish to type on or control a particular application, you will need to either execute the command in a hidden window or use a delay timer.
 
@@ -243,5 +243,5 @@ Please note the following
 [^2]: Download and extract to a location in your PATH environmental variable OR this project's root folder.
 [^3]: Currently, audial responses are only used to confirm volume adjustments and to inform the user when a command was not understood.
 [^4]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes causing unexpected results.  As you may experience with the Volume cards later.
-[^5]: To execute from console do `python type.py DESIRED COMMAND HERE`.  Use the `-v` argument to avoid interpretation and simply dictate.  `python type.py -v DESIRED SENTENCE HERE`  You may choose to use quotations around your command (`"DESIRED COMMAND"`) if you wish.
+[^5]: To execute from console do `python main.py DESIRED COMMAND HERE`.  Use the `-v` argument to avoid interpretation and simply dictate.  `python main.py -v DESIRED SENTENCE HERE`  You may choose to use quotations around your command (`"DESIRED COMMAND"`) if you wish.
 [^6]: Actually by default, Push2Run also uses "and" as a delimiter to separate commands.  Given that setting, I acknowledge that the "Full Screen and Play" card is redundant when you have separate "Full Screen" and "Pause/Play (press Space bar)" cards.
