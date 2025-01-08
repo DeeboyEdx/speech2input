@@ -1,6 +1,6 @@
 # speech2input
 
-Use your smart home device to command or dictate to your Windows computer.
+Convert dictated commands or dictate to your Windows computer.
 
 ## Demo Video
 
@@ -8,7 +8,7 @@ Use your smart home device to command or dictate to your Windows computer.
 
 ## Project Description
 
-This project originated from a simple desire to dictate to my computer, evolving into a quest for voice command functionality akin to my experience with my Android phone. Through the amalgamation of Python and various free tools, I crafted a functional solution. While it may not rival Microsoft's [Windows Speech Recognition](https://support.microsoft.com/windows/windows-speech-recognition-commands-9d25ef36-994d-f367-a81a-a326160128c7), my approach enables control from smart devices, offering a personally more valuable experience. Additionally, this project could prove beneficial for individuals facing tactile input impairments, extending its potential applications beyond conventional use.
+This project originated from a simple desire to dictate to my computer, evolving into a quest for voice command functionality akin to my experience with my Android phone. Through the amalgamation of Python and various free tools, I crafted a functional solution. While this project may not rival Microsoft's solutions such as [voice access](https://support.microsoft.com/topic/get-started-with-voice-access-bd2aa2dc-46c2-486c-93ae-3d75f7d053a4), my approach enables control from smart devices, offering a personally more valuable experience. Additionally, this project could prove beneficial for individuals facing tactile input impairments, extending its potential applications beyond conventional use.
 
 ## Prerequisites
 
