@@ -1,6 +1,6 @@
 # speech2input
 
-Convert dictated commands or dictate to your Windows computer.
+Convert dictated commands text output or actions on your Windows computer.
 
 ## Demo Video
 
@@ -8,7 +8,7 @@ Convert dictated commands or dictate to your Windows computer.
 
 ## Project Description
 
-This project originated from a simple desire to dictate to my computer, evolving into a quest for voice command functionality akin to my experience with my Android phone. Through the amalgamation of Python and various free tools, I crafted a functional solution. While this project may not rival Microsoft's solutions such as [voice access](https://support.microsoft.com/topic/get-started-with-voice-access-bd2aa2dc-46c2-486c-93ae-3d75f7d053a4), my approach enables control from smart devices, offering a personally more valuable experience. Additionally, this project could prove beneficial for individuals facing tactile input impairments, extending its potential applications beyond conventional use.
+This project originated from a simple desire to dictate to my computer, evolving into a quest for voice command functionality akin to my experience with an Android phone. Through the amalgamation of Python and various free tools, I crafted a functional solution. While this project may not rival Microsoft's solutions such as [voice access](https://support.microsoft.com/topic/get-started-with-voice-access-bd2aa2dc-46c2-486c-93ae-3d75f7d053a4), my approach is open source and enables control from smart devices, offering for some a more valuable experience. Additionally, this project could prove beneficial for individuals facing tactile input impairments, extending its potential applications beyond conventional use.
 
 ## Prerequisites
 
