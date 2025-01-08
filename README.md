@@ -1,6 +1,6 @@
 # speech2input
 
-Convert dictated commands text output or actions on your Windows computer.
+Convert dictated commands to text output or actions on your Windows computer.
 
 ## Demo Video
 
