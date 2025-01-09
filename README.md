@@ -72,9 +72,9 @@ By this point, your digital assistant should understand a certain invocation phr
 
     You say: "*tell my computer to* **type** it is a lovely day period mark"
 
-    `main.py` receives `-v "it is a lovely day period mark"` (`-v` being the verbatim flag), then formats the string nicely, and lastly simulate the key presses to type out "**It is a lovely day.**" on your computer.
+    `main.py` receives `-v "it is a lovely day period mark"` (`-v` being the verbatim flag), then formats the string nicely, and lastly simulates the key presses to type out "**It is a lovely day.**" on your computer.
 
-- within the "Listen for" field, the `*` is a throw-away catch-all.  It's only purpose is for matching miscellaneous phrases, not for capturing text.  For example...
+- Within the 'Listen for' field, the `*` is a throw-away catch-all character. It's only purpose is for matching miscellaneous phrases, not for capturing text. For example, let's say that again like in the `p2r` file, you've put "* volume $" in your 'Listen for' field, and `change_audio_volume.py "$"` in your Parameters field.
   1. You say: "*tell my computer to* lower the gosh darn **volume to 20 percent**"
   1. Push2Run will match and throw away "lower the gosh darn".
   1. Match the "**volume**" keyword to the 'Change Volume' card.
