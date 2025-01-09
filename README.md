@@ -72,7 +72,7 @@ By this point, your digital assistant should understand a certain invocation phr
 
     You say: "*tell my computer to* **type** it is a lovely day period mark"
 
-    `main.py` will receive: `-v "it is a lovely day period mark"` (`-v` being the verbatim flag) which it will then format the string nicely and simulate the key presses to type out "**It is a lovely day.**" on your computer.
+    `main.py` receives `-v "it is a lovely day period mark"` (`-v` being the verbatim flag), then format the string nicely, and lastly simulate the key presses to type out "**It is a lovely day.**" on your computer.
 
 - within the "Listen for" field, the `*` is a throw-away catch-all.  It's only purpose is for matching miscellaneous phrases, not for capturing text.  For example...
   1. You say: "*tell my computer to* lower the gosh darn **volume to 20 percent**"
