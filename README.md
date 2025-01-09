@@ -95,15 +95,15 @@ Here's how to utilize these project files directly, without relying on Push2Run 
 
 - To type out a string to your computer with basic formatting use...
 
-  `python main.py -v <string>`
+  `python main.py -v [<string>...]`
 
 - To give your computer a command ([see supported commands](#list-of-viable-commands)) use...
 
-  `python main.py <command>`
+  `python main.py [<command>...]`
 
 - To change the volume...
 
-  `python change_audio_volume.py <command>`
+  `python change_audio_volume.py [<command>...]`
 
 - To toggle mute...
 
