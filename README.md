@@ -59,14 +59,14 @@ All requirements are *FREE*[^1] or free to a certain extent.
 |**Full Screen and Play**|Presses f then space bar key|
 |**Computer! Do Things**|Attempts to interpret command as Windows action(s). Types out as a sentence if it can't interpret it.|
 |**Type \***|Bypass command interpretation (uses `-v` flag) to simply type out the supplied text|
-|**No matching phrases**|"*No matching phrases*" is a special catch-all phrase that's triggered when no other card was triggered. Functionality is same as "*Computer! Do Things*" card.|
+|**No matching phrases**|"*No matching phrases*" is a special catch-all phrase that's triggered when no other card was triggered. Functionality is same as the "*Computer! Do Things*" card.|
 
 </details>
 
-<details><summary>Read an additional brief Push2Run primer...</summary>
+<details><summary>Read an additional Push2Run primer...</summary>
 <p>
 
-By this point, your digital assistant should understand a certain invocation phrase to indicate to forward commands through your Pushbullet service which is then captured by Push2Run.  In the following example scenarios, we'll use the invocation phrase "tell my computer to ~", the default for the Amazon Echo route, and which most colloquially makes sense.
+By this point, your digital assistant should understand a certain invocation phrase to indicate to forward commands through your Pushbullet service which is then captured by Push2Run.  In the following example scenarios, we'll use the invocation phrase "*tell my computer to* ~", the default for the Amazon Echo route, and which most colloquially makes sense.
 
 - `$` represents your variable.  For example, let's say you've setup your Type card as below with "type $" as one of the entries in the 'Listen for' field...[^4]
 
