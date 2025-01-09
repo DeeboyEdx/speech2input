@@ -29,7 +29,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
   - a Google Assistant device
     - and an [IFTTT](https://ifttt.com/) account
       - with applicable applet(s)
-> [!IMPORTANT]
+> [!NOTE]
 > Due to Google's August 2022 bull**** change, the IFTTT route no longer supports variables or "ingredients[^7]" in its commands so applets must be hard-coded.
 
 ## Setup
@@ -39,7 +39,9 @@ All requirements are *FREE*[^1] or free to a certain extent.
     - **Amazon Echo**: Use the [PC Commander skill](https://www.amazon.com/dp/B0DFRQYYC3/) for integration.
     - **Google Assistant**: Use [IFTTT](https://ifttt.com/) to link Google Assistant with Pushbullet.
 1. **Install Python and Dependencies**: Install Python 3.x, the `pynput` module (`pip install pynput`), and NirCmd.
-1. **Download Project Files**: Download the project files and place them into `C:\Scripts\speech2input\` or a directory of your choosing.
+> [!IMPORTANT]
+> It's recommended to select [x] "Add python.exe to PATH". Otherwise, you'll need to include the full python executable path in your Push2Run cards.
+5. **Download Project Files**: Download the project files and place them into `C:\Scripts\speech2input\` or a directory of your choosing.
 1. **Configure Push2Run**: Link Push2Run with your Pushbullet account, and import the `p2r` file or create cards in Push2Run to link voice commands to Python scripts.<details><summary><strong>Instructions</strong></summary>
     - for **Amazon Echo** route: https://pccommander.net/howto/push2run/  
     - for **Google Assistant** route: https://github.com/roblatour/Push2Run/blob/main/help/setup_Google_IFTTT_Pushbullet.md
