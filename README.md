@@ -29,8 +29,8 @@ All requirements are *FREE*[^1] or free to a certain extent.
   - a Google Assistant device
     - and an [IFTTT](https://ifttt.com/) account
       - with applicable applet(s)
-  > [!IMPORTANT]
-  > Thanks to Google's decision, the IFTTT route no longer supports variables or "ingredients"[^7] in its commands so applets must be hard-coded.
+> [!IMPORTANT]
+> Thanks to Google's decision, the IFTTT route no longer supports variables or "ingredients"[^7] in its commands so applets must be hard-coded.
 
 ## Setup
 1. **Create Pushbullet Account**: Go to [pushbullet.com](https://www.pushbullet.com/).
@@ -95,8 +95,8 @@ Here's how to utilize these project files directly, without relying on Push2Run 
 
   `python main.py <command>`
 
-  > [!NOTE]
-  > These commands will execute immediately so if you wish to type on or control a particular application, you will need to either execute the command in a hidden window or use a delay timer.
+> [!NOTE]
+> These commands will execute immediately so if you wish to type on or control a particular application, you will need to either execute the command in a hidden window or use a delay timer.
 
 ## List of viable commands
 
