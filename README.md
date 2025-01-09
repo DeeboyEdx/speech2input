@@ -25,7 +25,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
 - [Pushbullet](https://www.Pushbullet.com/) account
 - A smart home assistant device. These are two compatible options, AFAIK.
   - an Amazon Echo - **recommended**
-    - with the [PC Commander skill](https://pccommander.net/)
+    - with the [PC Commander](https://pccommander.net/) skill
   - a Google Assistant device
     - and an [IFTTT](https://ifttt.com/) account
       - with applicable applet(s)
@@ -34,7 +34,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
 1. **Create Pushbullet Account**: Go to [pushbullet.com](https://www.pushbullet.com/).
 1. **Install Push2Run**: Download and install the [Push2Run](https://www.push2run.com/) application on your Windows PC.
 1. **Set Up Smart Device**: Connect your smart device to Pushbullet.
-    - **Amazon Echo**: Use the [PC Commander skill](https://pccommander.net/) for integration.
+    - **Amazon Echo**: Use the [PC Commander skill](https://www.amazon.com/dp/B0DFRQYYC3/) for integration.
     - **Google Assistant**: Use [IFTTT](https://ifttt.com/) to link Google Assistant with Pushbullet.
 1. **Install Python and Dependencies**: Install Python 3.x, the `pynput` module (`pip install pynput`), and NirCmd.
 1. **Download Project Files**: Download the project files and place them into `C:\Scripts\speech2input\` or a directory of your choosing.
