@@ -39,8 +39,8 @@ All requirements are *FREE*[^1] or free to a certain extent.
 1. **Install Python and Dependencies**: Install Python 3.x, the `pynput` module (`pip install pynput`), and NirCmd.
 1. **Download Project Files**: Download the project files and place them into `C:\Scripts\speech2input\` or a directory of your choosing.
 1. **Configure Push2Run**: Link Push2Run with your Pushbullet account, and import the `p2r` file or create cards in Push2Run to link voice commands to Python scripts.<details><summary><strong>Instructions</strong></summary>
-    For the Amazon Echo route, see https://pccommander.net/howto/push2run/  
-    For the Google Assistant route, see https://github.com/roblatour/Push2Run/blob/main/help/setup_Google_IFTTT_Pushbullet.md
+    - for **Amazon Echo** route: https://pccommander.net/howto/push2run/  
+    - for **Google Assistant** route: https://github.com/roblatour/Push2Run/blob/main/help/setup_Google_IFTTT_Pushbullet.md
     </details>
 
 > [!WARNING]
