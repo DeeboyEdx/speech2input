@@ -46,7 +46,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
     </details>
 
 > [!WARNING]
-> If you chose a custom project directory and wish to import the `p2r` file, update the path of each entry's *Parameter* field to the directory you chose. This can be done either directly in the file before importing, or after importing within Push2Run's GUI.
+> If you chose a custom project directory and wish to import the `p2r` file, update the path of each entry's *Parameter* field to the directory you chose. This can be done either directly in the file with a text editor before importing, or after importing within Push2Run's GUI.
 
   <br>
 
