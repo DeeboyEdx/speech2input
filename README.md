@@ -64,13 +64,13 @@ All requirements are *FREE*[^1] or free to a certain extent.
 <details><summary>Read an additional brief Push2Run primer...</summary>
 <p>
 
-By this point, you will have an invocation keyword set up to indicate to your digital assistant to forward commands through your Pushbullet service which will be captured by Push2Run.  In this readme's example scenarios, we will use the "tell my computer to ~" keywords (the default for both proposed routes) which colloquially just makes sense.
+By this point, your digital assistant should understand a certain invocation phrase to indicate to forward commands through your Pushbullet service which is then captured by Push2Run.  In the following example scenarios, we'll use the invocation phrase "tell my computer to ~", the default for the Amazon Echo route, and which most colloquially makes sense.
 
 - `$` represents your variable.  For example, let's say you've setup your Type card as below with "type $" as one of the entries in the 'Listen for' field...[^4]
 
     You say: "*tell my computer to* type **it is a lovely day period mark**"
 
-    main.py will receive: "-v **it is a lovely day period mark**" (-v being the verbatim flag) which it will then format the string nicely and simulate the key presses to type it out on your computer.  "**It is a lovely day.**"
+    `main.py` will receive: "-v **it is a lovely day period mark**" (-v being the verbatim flag) which it will then format the string nicely and simulate the key presses to type out "**It is a lovely day.**" on your computer.
 
 - within the "Listen for" field, the `*` is a throw-away catch-all.  It's only purpose is for matching miscellaneous phrases, not for capturing text.  For example...
   1. You say: "*tell my computer to* lower the gosh darn **volume to 20 percent**"
@@ -203,6 +203,6 @@ Please note the following
 [^1]: Aside from the Windows PC and a device with smart home assistant, of course.  These devices are ubiquitous but I recognize accessibility to these devices is not universal.
 [^2]: Download and extract to a location in your PATH environmental variable OR this project's root folder.
 [^3]: Currently, audial responses are only used to confirm volume adjustments and to inform the user when a command was not understood.
-[^4]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes causing unexpected results.  As you may experience with the Volume cards later.
+[^4]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes, leading to unexpected results.  As you may experience with the Volume cards later.
 [^5]: To execute from console do `python main.py DESIRED COMMAND HERE`.  Use the `-v` argument to avoid interpretation and simply dictate.  `python main.py -v DESIRED SENTENCE HERE`  You may choose to use quotations around your command (`"DESIRED COMMAND"`) if you wish.
 [^6]: Actually by default, Push2Run also uses "and" as a delimiter to separate commands.  Given that setting, I acknowledge that the "Full Screen and Play" card is redundant when you have separate "Full Screen" and "Pause/Play (press Space bar)" cards.
