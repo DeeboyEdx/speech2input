@@ -105,7 +105,7 @@ Here's how to utilize these project files directly, without relying on Push2Run 
 
   `python change_audio_volume.py "toggle mute"`
 
-> [!NOTE]
+> [!TIP]
 > These commands will execute immediately so if you wish to type on or control a particular application, you will need to either execute the command in a hidden window or use a delay timer.
 
 ## List of viable commands
