@@ -79,7 +79,7 @@ By this point, your digital assistant should understand a certain invocation phr
   For example, let's say that you've put created a card named *Change Volume* with "* volume $" in the 'Listen for' field, and `change_audio_volume.py "$"` in your Parameters field.
   1. You say: "*tell my computer to* lower the gosh darn **volume to 20 percent**"
   1. Push2Run will match and throw away "lower the gosh darn".
-  1. Match the "**volume**" keyword to the 'Change Volume' card.
+  1. Match the "**volume**" keyword to the *Change Volume* card.
   1. And pass long "**to 20 percent**" to the script.
 
 </p>
