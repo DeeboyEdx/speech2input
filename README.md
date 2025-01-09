@@ -1,136 +1,85 @@
-# speech2input
+# Speech2Input
 
-Convert dictated commands to text output or actions on your Windows computer.
+Integrate smart devices, software, and services to convert spoken commands into typed text or actions on your Windows computer.
 
-## Demo Video
+## Demo video
 
 [![demo video](https://img.youtube.com/vi/2mzV1V0gVAE/0.jpg)](https://www.youtube.com/watch?v=2mzV1V0gVAE)
 
-## Project Description
+## Project description
 
-This project originated from a simple desire to dictate to my computer, evolving into a quest for voice command functionality akin to my experience with an Android phone. Through the amalgamation of Python and various free tools, I crafted a functional solution. While this project may not rival Microsoft's solutions such as [voice access](https://support.microsoft.com/topic/get-started-with-voice-access-bd2aa2dc-46c2-486c-93ae-3d75f7d053a4), my approach is open source and enables control from smart devices, offering for some a more valuable experience. Additionally, this project could prove beneficial for individuals facing tactile input impairments, extending its potential applications beyond conventional use.
+This project allows you to convert spoken commands from smart devices, like Amazon Echo and Google Assistant, into typed text or executable actions on your Windows computer. By integrating various software and services such as Push2Run, Pushbullet, and Python scripts, you can control your PC using voice commands.
+
+### Background
+
+This project originated from a simple desire to dictate to my computer, evolving into a quest for voice command functionality akin to my experience with an Android phone. While this project may not rival other solutions such as [Microsoft's voice access](https://support.microsoft.com/topic/get-started-with-voice-access-bd2aa2dc-46c2-486c-93ae-3d75f7d053a4), my approach is open source, highly customaizable, and enables remote control from your smart devices. So, it offers for some a more valuable experience.
 
 ## Prerequisites
 
-All requirements are *FREE*[^1].  The only exceptions are if you've already used your free allotments, would be the Pushbullet and/or IFTTT accounts.
+All requirements are *FREE*[^1] or free to a certain extent.
 
 - Windows PC
   - [Push2Run](https://www.push2run.com/) application
-  - [Python 3.x](https://www.python.org/downloads/)
-    - [pynput](https://pypi.org/project/pynput/) module. TL:DR  `pip install pynput`
-  - (optional) [NirCmd](https://www.nirsoft.net/utils/nircmd.html) for audial responses
+  - [Python 3.x](https://www.python.org/downloads/) and [pynput](https://pypi.org/project/pynput/) module
+  - [NirCmd](https://www.nirsoft.net/utils/nircmd.html) for audial responses (optional)
 - [Pushbullet](https://www.Pushbullet.com/) account
-- A smart device from which to send Pushbullet messages. (These are two options I've used)
-  - an Amazon Echo smart home assistant [**recommended FREE option**]
-    - with the [PC Commander skill](https://pccommander.net/) (currently in beta)
-  - a device with Google Assistant [Potentially Free option]
+- A smart home assistant device. These are two compatible options, AFAIK.
+  - an Amazon Echo - **recommended**
+    - with the [PC Commander skill](https://pccommander.net/)
+  - a Google Assistant device
     - and an [IFTTT](https://ifttt.com/) account
-      - with an applet that links your Google and Pushbullet services
+      - with applicable applet(s)
 
 ## Setup
-
-1. Install the [Push2Run](https://www.push2run.com/) application.
-
-1. Setup one or both of these smart home device connections to your Pushbullet service.
-
-   - **Alexa Route**: Refer to the [PC Commander website](http://pccommander.net/) for instructions.
-
-   - (deprecated) **Google Route**: Follow [these instructions](https://www.push2run.com/setup_Pushbullet.html).  
-
-   With the completion of these steps, you will already be able to do a lot of things such as shutdown, reboot, google search, youtube search, open a program of your choice, etc.  See more [with these example cards](https://push2run.com/examplecards.html).
-
-1. Install python. I recommend checking the "Add python.exe to PATH" check box.
-
-1. Download this project's files to a directory of your choosing.  Take note of the path as you will need it later.
-   - change_audio_volume.py
-   - dee_logging.py
-   - keypress_functions.py
-   - main.py
-   - Push2Run_s2i_cards.p2r (optional)
-
-   *The other files are unnecessary.*
-
-1. (optional) "*Install*"[^2] **NirCmd** to enable synthesized "voice" responses from your computer.[^3]  This is a small command-line utility that allows you to do some useful tasks such as voice synthesis.
-
-1. Setup Push2Run (p2r) cards.  By this step, you should be ready to import (or create) cards that will facilitate the connection between Push2Run and these python project files.  To import, simply drag the included [Push2Run_s2i_cards.p2r](Push2Run_s2i_cards.p2r) file (a JSON file) into your Push2Run client.  Feel free to discard the file once imported.
-
-   ### What cards will be imported
-
-    - **Pause/Play**<br>Presses space bar
-    - **Full Screen**<br>Presses f key
-    - **Full Screen and Play**<br>Presses f and space bar
-    - **Type \***<br>Bypass command interpretation to simply type out the supplied text
-    - **Computer! Do Things**<br>A catch-all card. Attempts to interpret any messages which didn't trigger a Push2Run card as a command.
-    - **No matching phrases**<br>Same catch-all functionality as above card
-
-1. Change the path in the cards' *Parameter* field to the directory you chose in step 4, where you've placed this project's files.  This can be done either in the p2r file before importing, or after importing within Push2Run's GUI.  In the provided cards, the path is set to `C:\Scripts\python\speech2input\`.
-    <br><br>
-
-    <details><summary><strong>Click here to see how to build your own cards.</strong></summary>
-
-    Note that all these cards are set to the "Hidden" window state which is important to prevent a terminal window from being shown.
-
-    <p>
-
-    ## **Type** card
-
-    We'll start with the dictation card.
-    With this, you'll be able to tell your computer to **type out** long sentences.
-
-    ![Type card example](https://user-images.githubusercontent.com/71462840/146619077-ebca46e2-0119-4d00-a05d-c976aa0ef4e0.png)
-    <br><br>
-
-    ## **Command** card
-
-    Next is the command card.
-    With this, you'll be able to tell your computer to **perform** a multitude of physical inputs, either colloquially (ex. "minimize") or literally (ex. "press alt space n").  See [more](#literal).
-
-    ![Command card example](https://user-images.githubusercontent.com/71462840/146622849-f7a05af8-faef-4a3b-991c-d41e045781b2.png)
-    <br><br>
-
-    ## **Volume** card
-
-    With these cards, you'll be able to tell your computer to change the volume.  You can also tell it to mute, un-mute, toggle mute, or even to "shut up".  I'm still working out the kinks for this one so I did not include a card for volume adjustments in the included p2r file.
-
-    Note that there are two cards as I found it more successful to separate them like so.
-
-    ![Volume card example](https://user-images.githubusercontent.com/71462840/146622938-419fec15-63c8-4a9c-a6f7-5e415f2c93ab.png)
-
-    </p>
+1. **Create Pushbullet Account**: Go to [pushbullet.com](https://www.pushbullet.com/).
+1. **Install Push2Run**: Download and install the [Push2Run](https://www.push2run.com/) application on your Windows PC.
+1. **Set Up Smart Device**: Connect your smart device to Pushbullet.
+    - **Amazon Echo**: Use the [PC Commander skill](https://pccommander.net/) for integration.
+    - **Google Assistant**: Use [IFTTT](https://ifttt.com/) to link Google Assistant with Pushbullet.
+1. **Install Python and Dependencies**: Install Python 3.x, the `pynput` module (`pip install pynput`), and NirCmd.
+1. **Download Project Files**: Download the project files and place them into `C:\Scripts\speech2input\` or a directory of your choosing.
+1. **Configure Push2Run**: Link Push2Run with your Pushbullet account, and import the `p2r` file or create cards in Push2Run to link voice commands to Python scripts.<details><summary><strong>Instructions</strong></summary>
+    For the Amazon Echo route, see https://pccommander.net/howto/push2run/  
+    For the Google Assistant route, see https://github.com/roblatour/Push2Run/blob/main/help/setup_Google_IFTTT_Pushbullet.md
     </details>
 
-    <details><summary>Read an additional brief Push2Run primer...</summary>
-    <p>
+> [!WARNING]
+> If you chose a different project directory and wish to import the `p2r` file, update the path of each entry's *Parameter* field to the directory you chose. This can be done either directly in the file before importing, or after importing within Push2Run's GUI.
 
-    By this point, you will have an invocation keyword set up to indicate to your digital assistant to forward commands through your Pushbullet service which will be captured by Push2Run.  In this readme's example scenarios, we will use the "tell my computer to ~" keywords (the default for both proposed routes) which colloquially just makes sense.
+  <br>
 
-    - `$` represents your variable.  For example, let's say you've setup your Type card as below with "type $" as one of the entries in the 'Listen for' field...[^4]
+<details><summary><strong>Click here for a list of the cards included in the p2r file.</strong></summary>
 
-       You say: "*tell my computer to* type **it is a lovely day period mark**"
+|Action|Description|
+|-|-|
+|**Pause/Play**|Presses space bar|
+|**Full Screen**|Presses f key|
+|**Full Screen and Play**|Presses f and space bar|
+|**Type \***|Bypass command interpretation (uses `-v` flag) to simply type out the supplied text|
+|**Computer! Do Things**|Attempts to interpret command as Windows action(s). Types out as a sentence if it can't interpret it.|
+|**No matching phrases**|"*No matching phrases*" is a special catch-all phrase that's triggered when no other card was triggered. Functionality is same as above card.|
 
-       main.py will receive: "-v **it is a lovely day period mark**" (-v being the verbatim flag) which it will then format the string nicely and simulate the key presses to type it out on your computer.  "**It is a lovely day.**"
+</details>
 
-    - within the "Listen for" field, the `*` is a throw-away catch-all.  It's only purpose is for matching miscellaneous phrases, not for capturing text.  For example...
-      1. You say: "*tell my computer to* lower the gosh darn **volume to 20 percent**"
-      1. Push2Run will match and throw away "lower the gosh darn".
-      1. Match the "**volume**" keyword to the 'Change Volume' card.
-      1. And pass long "**to 20 percent**" to the script.
+<details><summary>Read an additional brief Push2Run primer...</summary>
+<p>
 
-    </p>
-    </details><br>
+By this point, you will have an invocation keyword set up to indicate to your digital assistant to forward commands through your Pushbullet service which will be captured by Push2Run.  In this readme's example scenarios, we will use the "tell my computer to ~" keywords (the default for both proposed routes) which colloquially just makes sense.
 
-    <details><summary>Caveats, acknowledgements, and known bugs to fix</summary>
-    <p>
+- `$` represents your variable.  For example, let's say you've setup your Type card as below with "type $" as one of the entries in the 'Listen for' field...[^4]
 
-    - [x] *An internet connection is required for your computer to recieve commands.*
-    - [x] *You must be logged into your computer for most, if not all, actions to succeed.*
-    - [x] A Digital assistant's attention span is short. So, commands must be swift and to the point.
-      - [x] As such, performing multiple or complex actions utilizing this project may prove difficult.  Thankfully the Alexa method has a follow-up mode which alleviates this pressure.
-    - [x] Giving literal key-press commands can be tricky to near impossible as it is wholly dependent on what the digital assistant *thinks* it heard with their tendency to listen for natural spoken language.  For example, it may hear "end" when you say "n".  I try to work with this by providing an equivalency dictionary but it isn't perfect.
-    - [ ] Log file location may differ depending on whether the script is executed from the console[^5] or by Push2Run.
+    You say: "*tell my computer to* type **it is a lovely day period mark**"
 
-    </p>
-    </details>
+    main.py will receive: "-v **it is a lovely day period mark**" (-v being the verbatim flag) which it will then format the string nicely and simulate the key presses to type it out on your computer.  "**It is a lovely day.**"
+
+- within the "Listen for" field, the `*` is a throw-away catch-all.  It's only purpose is for matching miscellaneous phrases, not for capturing text.  For example...
+  1. You say: "*tell my computer to* lower the gosh darn **volume to 20 percent**"
+  1. Push2Run will match and throw away "lower the gosh darn".
+  1. Match the "**volume**" keyword to the 'Change Volume' card.
+  1. And pass long "**to 20 percent**" to the script.
+
+</p>
+</details>
 
 ## How to use directly
 
@@ -144,7 +93,8 @@ Here's how to utilize these project files directly, without relying on Push2Run 
 
   `python main.py <command>`
 
-  Note that these commands will execute immediately so if you wish to type on or control a particular application, you will need to either execute the command in a hidden window or use a delay timer.
+  > [!NOTE]
+  > These commands will execute immediately so if you wish to type on or control a particular application, you will need to either execute the command in a hidden window or use a delay timer.
 
 ## List of viable commands
 
@@ -238,6 +188,19 @@ Please note the following
 
 - wait 10 seconds and ...
 - type I see you exclamation mark after 3 minutes
+
+<details><summary>Caveats, acknowledgements, and known bugs to fix</summary>
+<p>
+
+- [x] *An internet connection is required for your computer to recieve commands.*
+- [x] *You must be logged into your computer for most, if not all, actions to succeed.*
+- [x] A digital assistant's attention span is short. So, commands must be swift and to the point.
+  - [x] As such, performing multiple or complex actions utilizing this project may prove difficult.  Thankfully the Alexa method has a follow-up mode which alleviates this pressure.
+- [x] Giving literal key-press commands can be tricky to near impossible as it is wholly dependent on what the digital assistant *thinks* it heard with their tendency to listen for natural spoken language.  For example, it may hear "end" when you say "n".  I try to work with this by providing an equivalency dictionary but it isn't perfect.
+- [ ] Log file location may differ depending on whether the script is executed from the console[^5] or by Push2Run.
+
+</p>
+</details><br>
 
 [^1]: Aside from the Windows PC and a device with smart home assistant, of course.  These devices are ubiquitous but I recognize accessibility to these devices is not universal.
 [^2]: Download and extract to a location in your PATH environmental variable OR this project's root folder.
