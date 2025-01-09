@@ -1,6 +1,6 @@
 # Speech2Input
 
-Integrate smart devices, software, and services to convert spoken commands into typed text or actions on your Windows computer.
+Convert spoken commands into typed text or actions on your Windows computer by integrating smart devices, software, and services.
 
 ## Demo video
 
