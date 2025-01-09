@@ -30,7 +30,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
     - and an [IFTTT](https://ifttt.com/) account
       - with applicable applet(s)
 > [!IMPORTANT]
-> Due to Google's August 2022 bull**** decision, the IFTTT route no longer supports variables or "ingredients[^7]" in its commands so applets must be hard-coded.
+> Due to Google's August 2022 bull**** change, the IFTTT route no longer supports variables or "ingredients[^7]" in its commands so applets must be hard-coded.
 
 ## Setup
 1. **Create Pushbullet Account**: Go to [pushbullet.com](https://www.pushbullet.com/).
@@ -46,7 +46,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
     </details>
 
 > [!WARNING]
-> If you chose a different project directory and wish to import the `p2r` file, update the path of each entry's *Parameter* field to the directory you chose. This can be done either directly in the file before importing, or after importing within Push2Run's GUI.
+> If you chose a custom project directory and wish to import the `p2r` file, update the path of each entry's *Parameter* field to the directory you chose. This can be done either directly in the file before importing, or after importing within Push2Run's GUI.
 
   <br>
 
