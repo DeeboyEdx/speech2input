@@ -29,6 +29,8 @@ All requirements are *FREE*[^1] or free to a certain extent.
   - a Google Assistant device
     - and an [IFTTT](https://ifttt.com/) account
       - with applicable applet(s)
+    > [!WARNING]
+    > Thanks to Google's decision, the IFTTT route no longer supports variables or "ingredients"[^7] in its commands so applets must be hard-coded.
 
 ## Setup
 1. **Create Pushbullet Account**: Go to [pushbullet.com](https://www.pushbullet.com/).
@@ -206,3 +208,4 @@ Please note the following
 [^4]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes, leading to unexpected results.  As you may experience with the Volume cards later.
 [^5]: To execute from console do `python main.py DESIRED COMMAND HERE`.  Use the `-v` argument to avoid interpretation and simply dictate.  `python main.py -v DESIRED SENTENCE HERE`  You may choose to use quotations around your command (`"DESIRED COMMAND"`) if you wish.
 [^6]: Actually by default, Push2Run also uses "and" as a delimiter to separate commands.  Given that setting, I acknowledge that the "Full Screen and Play" card is redundant when you have separate "Full Screen" and "Pause/Play (press Space bar)" cards.
+[^7]: Fucking stupid name for it.
