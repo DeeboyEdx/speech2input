@@ -30,7 +30,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
     - and an [IFTTT](https://ifttt.com/) account
       - with applicable applet(s)
 > [!IMPORTANT]
-> Thanks to Google's decision, the IFTTT route no longer supports variables or "ingredients"[^7] in its commands so applets must be hard-coded.
+> Due to Google's August 2022 bull**** decision, the IFTTT route no longer supports variables or "ingredients[^7]" in its commands so applets must be hard-coded.
 
 ## Setup
 1. **Create Pushbullet Account**: Go to [pushbullet.com](https://www.pushbullet.com/).
