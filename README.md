@@ -38,7 +38,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
 1. **Set Up Smart Device**: Connect your smart device to Pushbullet.
     - **Amazon Echo**: Use the [PC Commander skill](https://www.amazon.com/dp/B0DFRQYYC3/) for integration.
     - **Google Assistant**: Use [IFTTT](https://ifttt.com/) to link Google Assistant with Pushbullet.
-1. **Install Python and Dependencies**: Install Python 3.x, the `pynput` module (execute `pip install pynput` in a command line after installing Python).
+1. **Install Python and Dependencies**: Install Python 3.x, then the `pynput` module (by executing `pip install pynput` in a command line after installing Python).
   > [!IMPORTANT]
   > It's recommended to select "Add python.exe to PATH". Otherwise, you must use the full python executable path in your Push2Run cards.
 5. **Download Project Files**: Download the project files and place them, **along with NirCmd**, into `C:\Scripts\speech2input\` or a directory of your choosing.
