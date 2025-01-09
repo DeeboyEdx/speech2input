@@ -154,7 +154,7 @@ Please note the following
 - alt space n
 - shift r
 - etc.
-- control alt delete <- is a protected key combination thus will NOT work
+- control alt delete <- is a protected key combination so it is NOT supported
 
 ### in Browser
 
@@ -203,11 +203,11 @@ Please note the following
 
 ## Caveats, acknowledgements, and known bugs to fix
 
-- [x] *An internet connection is required for your computer to recieve commands.*
-- [x] *You must be logged into your computer for most, if not all, actions to succeed.*
-- [x] A digital assistant's attention span is short. So, commands must be swift and to the point.
-  - [x] As such, performing multiple or complex actions utilizing this project may prove difficult.  Thankfully the Alexa method has a follow-up mode which alleviates this pressure.
-- [x] Giving literal key-press commands can be tricky to near impossible as it is wholly dependent on what the digital assistant *thinks* it heard with their tendency to listen for natural spoken language.  For example, it may hear "end" when you say "n".  I try to work with this by providing an equivalency dictionary but it isn't perfect.
+- [ ] *An internet connection is required for your computer to recieve commands.*
+- [ ] *You must be logged into your computer for most, if not all, actions to succeed.*
+- [ ] A digital assistant's attention span is short. So, commands must be swift and to the point.
+  - [ ] As such, performing multiple or complex actions utilizing this project may prove difficult.  Thankfully the Alexa method has a follow-up mode which alleviates this pressure.
+- [ ] Giving literal key-press commands can be tricky to near impossible as it is wholly dependent on what the digital assistant *thinks* it heard with their tendency to listen for natural spoken language.  For example, it may hear "end" when you say "n".  I try to work with this by providing an equivalency dictionary but it isn't perfect.
 - [ ] Log file location may differ depending on whether the script is executed from the console[^5] or by Push2Run.
 
 ## Footnotes
