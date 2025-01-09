@@ -27,7 +27,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
   - an Amazon Echo - **recommended**
     - with the [PC Commander](https://pccommander.net/) skill
   - a Google Assistant device
-    - and an [IFTTT](https://ifttt.com/) account
+    - and an <a href="https://ifttt.com/" target="_blank">IFTTT</a> account
       - with applicable applet(s)
 
 ## Setup
