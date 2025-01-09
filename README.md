@@ -57,9 +57,9 @@ All requirements are *FREE*[^1] or free to a certain extent.
 |**Pause/Play**|Presses space bar|
 |**Full Screen**|Presses f key|
 |**Full Screen and Play**|Presses f then space bar key|
-|**Type \***|Bypass command interpretation (uses `-v` flag) to simply type out the supplied text|
 |**Computer! Do Things**|Attempts to interpret command as Windows action(s). Types out as a sentence if it can't interpret it.|
-|**No matching phrases**|"*No matching phrases*" is a special catch-all phrase that's triggered when no other card was triggered. Functionality is same as above card.|
+|**Type \***|Bypass command interpretation (uses `-v` flag) to simply type out the supplied text|
+|**No matching phrases**|"*No matching phrases*" is a special catch-all phrase that's triggered when no other card was triggered. Functionality is same as "Computer! Do Things" card.|
 
 </details>
 
