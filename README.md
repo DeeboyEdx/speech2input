@@ -40,7 +40,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
     - **Google Assistant**: Use [IFTTT](https://ifttt.com/) to link Google Assistant with Pushbullet.
 1. **Install Python and Dependencies**: Install Python 3.x, the `pynput` module (`pip install pynput`), and NirCmd.
 > [!IMPORTANT]
-> It's recommended to select "Add python.exe to PATH". Otherwise, you must include the full python executable path in your Push2Run cards.
+> It's recommended to select "Add python.exe to PATH". Otherwise, you must use the full python executable path in your Push2Run cards.
 5. **Download Project Files**: Download the project files and place them into `C:\Scripts\speech2input\` or a directory of your choosing.
 1. **Configure Push2Run**: Link Push2Run with your Pushbullet account, and import the `p2r` file or create cards in Push2Run to link voice commands to Python scripts.<details><summary><strong>Instructions</strong></summary>
     - for **Amazon Echo** route: https://pccommander.net/howto/push2run/  
