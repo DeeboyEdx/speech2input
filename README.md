@@ -31,7 +31,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
       - with applicable applet(s)
 
 ## Setup
-1. **Create Pushbullet Account**: Go to [pushbullet.com](https://www.pushbullet.com/).
+1. **Create Pushbullet Account**: Go to <a href="https://www.pushbullet.com/" target="_blank">pushbullet.com</a>.
 1. **Install Push2Run**: Download and install the [Push2Run](https://www.push2run.com/) application on your Windows PC.
 1. **Set Up Smart Device**: Connect your smart device to Pushbullet.
     - **Amazon Echo**: Use the [PC Commander skill](https://www.amazon.com/dp/B0DFRQYYC3/) for integration.
