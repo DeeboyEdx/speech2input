@@ -27,11 +27,11 @@ All requirements are *FREE*[^1] or free to a certain extent.
   - an Amazon Echo - **recommended**
     - with the [PC Commander](https://pccommander.net/) skill
   - a Google Assistant device
-    - and an <a href="https://ifttt.com/" target="_blank">IFTTT</a> account
+    - and an [IFTTT](https://ifttt.com/) account
       - with applicable applet(s)
 
 ## Setup
-1. **Create Pushbullet Account**: Go to <a href="https://www.pushbullet.com/" target="_blank">pushbullet.com</a>.
+1. **Create Pushbullet Account**: Go to [pushbullet.com](https://www.pushbullet.com/).
 1. **Install Push2Run**: Download and install the [Push2Run](https://www.push2run.com/) application on your Windows PC.
 1. **Set Up Smart Device**: Connect your smart device to Pushbullet.
     - **Amazon Echo**: Use the [PC Commander skill](https://www.amazon.com/dp/B0DFRQYYC3/) for integration.
@@ -54,7 +54,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
 |-|-|
 |**Pause/Play**|Presses space bar|
 |**Full Screen**|Presses f key|
-|**Full Screen and Play**|Presses f and space bar|
+|**Full Screen and Play**|Presses f then space bar key|
 |**Type \***|Bypass command interpretation (uses `-v` flag) to simply type out the supplied text|
 |**Computer! Do Things**|Attempts to interpret command as Windows action(s). Types out as a sentence if it can't interpret it.|
 |**No matching phrases**|"*No matching phrases*" is a special catch-all phrase that's triggered when no other card was triggered. Functionality is same as above card.|
@@ -189,8 +189,7 @@ Please note the following
 - wait 10 seconds and ...
 - type I see you exclamation mark after 3 minutes
 
-<details><summary>Caveats, acknowledgements, and known bugs to fix</summary>
-<p>
+## Caveats, acknowledgements, and known bugs to fix
 
 - [x] *An internet connection is required for your computer to recieve commands.*
 - [x] *You must be logged into your computer for most, if not all, actions to succeed.*
@@ -199,8 +198,7 @@ Please note the following
 - [x] Giving literal key-press commands can be tricky to near impossible as it is wholly dependent on what the digital assistant *thinks* it heard with their tendency to listen for natural spoken language.  For example, it may hear "end" when you say "n".  I try to work with this by providing an equivalency dictionary but it isn't perfect.
 - [ ] Log file location may differ depending on whether the script is executed from the console[^5] or by Push2Run.
 
-</p>
-</details><br>
+## Footnotes
 
 [^1]: Aside from the Windows PC and a device with smart home assistant, of course.  These devices are ubiquitous but I recognize accessibility to these devices is not universal.
 [^2]: Download and extract to a location in your PATH environmental variable OR this project's root folder.
