@@ -80,10 +80,10 @@ By this point, your digital assistant should understand a certain invocation phr
 
 - Within the 'Listen for' field, the `*` is a throw-away, catch-all character. It's purpose is for matching miscellaneous phrases, not for capturing text.
 
-  For example, let's say that you've put created a card named *Change Volume* with "* volume $" in the 'Listen for' field, and `change_audio_volume.py "$"` in your Parameters field.
+  For example, let's say that you've put created a card specifically for modifying volume with "* volume $" in the 'Listen for' field, and `change_audio_volume.py "$"` in your Parameters field.
   1. You say: "*tell my computer to* lower the gosh darn **volume to 20 percent**"
   1. Push2Run will match and throw away "lower the gosh darn".
-  1. Match the "**volume**" keyword to the *Change Volume* card.
+  1. Match the "**volume**" keyword to the card.
   1. And pass long "**to 20 percent**" to the script.
 
 </p>
@@ -100,14 +100,6 @@ Here's how to utilize these project files directly, without relying on Push2Run 
 - To give your computer a command ([see supported commands](#list-of-viable-commands)) use...
 
   `python main.py [<command>...]`
-
-- To change the volume...
-
-  `python change_audio_volume.py [<command>...]`
-
-- To toggle mute...
-
-  `python change_audio_volume.py "toggle mute"`
 
 > [!TIP]
 > These commands will execute immediately so if you wish to type on or control a particular application, you will need to either execute the command in a hidden window or use a delay timer.
@@ -148,11 +140,12 @@ Please note the following
 
 ### Media
 
+- mute
+- volume up / down / specific number
 - play
 - pause
 - next
 - previous
-- mute
 - full screen (comptible for toggling full screen on most players)
 
 ### Literal
@@ -161,7 +154,7 @@ Please note the following
 - alt space n
 - shift r
 - etc.
-- control alt delete <- is a protected key combination so it is NOT supported
+- ❌ control alt delete <- is a protected key combination so it is NOT supported
 
 ### in Browser
 
