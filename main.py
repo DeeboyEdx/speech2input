@@ -20,7 +20,7 @@ DBUG = 0 # 1 (True) or 0 (False)
 # All log levels "above" the set level will also show.  Ex. If set to INFO, WARNING logs will also show.
 LOGGING_LEVEL = dl.logging.INFO
 # This variable is just for testing purposing, skipping the data hand-off chain.  Set to None for the script to ignore it.
-TESTING_VALUE = None # "change programs then type ABC and change programs and minimize" # <-- Test input
+TESTING_VALUE = None # "change programs then type ABC and change programs and minimize" # <-- Test input. Set to None to ignore it.
 # This variable is the confidence threshold used in making a best interpretation guess as a last resort.
 # Any guess below this value won't be executed.
 # 0.54 seems to be the sweet spot
@@ -168,7 +168,7 @@ MARK_SIGNS = {
     "single quote" : '\'',
     "less than"    : '<',
     "greater than" : '>',
-    "question"     : '?', # for some reason I hadn't included this one
+    "question"     : '?',
     "forward slash": '/',
     "back slash"   : '\\',
     "backslash"    : '\\',
@@ -274,7 +274,7 @@ SYNONYMS = {
 # Exit if no arguments.  Unless testing_value exists...
 if len(argv) == 1:
     if not TESTING_VALUE:
-        dbugprint("Didn't receive anything to type.", logging_level="ERROR")
+        dbugprint("No command received.", logging_level="ERROR")
         exit(1)
     dbugprint("****Using test values****", logging_level="INFO")
 
@@ -354,7 +354,9 @@ def getSpecialKey(input):
         None
     
     try:
-        return kf.Key[input]
+        # 'pause' is a special exception because it IS a Key but it doesn't do the media control stuff
+        if input != 'pause':
+            return kf.Key[input]
     except:
         None
     
@@ -557,29 +559,6 @@ def typeSentences(string):
         dbugprint(f"TAPPING {key}")
         kf.tap(key)
     return
-
-    # replaced with method above
-    single_word_return_keywords = ['enter','return','send']
-    dual_word_return_keywords   = ['new line', 'next line', 'hit return', 'hit enter']
-    last_word_means_Enter      =            string.split()[-1].lower() in single_word_return_keywords
-    last_two_words_means_Enter = ' '.join(string.split()[-2:]).lower() in dual_word_return_keywords
-    return_keywords = single_word_return_keywords + dual_word_return_keywords
-    hit_Enter_after_typing = last_word_means_Enter or last_two_words_means_Enter
-    
-
-    if hit_Enter_after_typing:
-        if last_two_words_means_Enter:
-            dbugprint("removing last two words and hitting ENTER")
-            string = '' if string.lower() in dual_word_return_keywords else string.rsplit(' ',2)[0]
-        else:
-            dbugprint("removing last word and hitting ENTER")
-            string = '' if string.lower() in single_word_return_keywords else string.rsplit(' ',1)[0]
-    for char in string:
-        kf.tap(char)
-        random_sleep_time_in_s = random.uniform(0.0, 0.01)
-        sleep(random_sleep_time_in_s)
-    if hit_Enter_after_typing:
-        kf.tap(kf.Key.enter)
 
 def pressLiteralKeys(keys, n=0):
     dbugprint(f"Pressing ", end="")
@@ -806,7 +785,7 @@ def convertToSeconds(t=1, unit="seconds"):
         return 1
 
 def main():
-    WORDS = TESTING_VALUE if TESTING_VALUE else argv[1:]
+    WORDS = [TESTING_VALUE] if TESTING_VALUE else argv[1:]
 
     # standardizing input: concatenate args into one strings. Designed to receive command(s) either divided into arguments or a single string argument
     phrase = ' '.join(WORDS)
