@@ -238,7 +238,6 @@ COMMANDS_DICT = {
     "control panel"                   : kf.do_open_control_panel,
     "mute"        : kf.do_press_media_volume_mute,
     "unmute"      : kf.do_press_media_volume_mute,
-    "toggle mute" : kf.do_press_media_volume_mute,
     "play"        : kf.do_press_media_play_pause,
     "pause"       : kf.do_press_media_play_pause,
     "next"        : kf.do_press_media_next_track,
