@@ -7,12 +7,15 @@
 # Thus although it's somewhat capable, this is designed more to interpret colloquial english commands rather than execute spoken key commands (Ex. "minimize" rather than "alt space n")
 
 from sys import exit, argv
-import random, re
+import os, random, re
 from difflib import get_close_matches
 from keypress_functions import sleep
 import keypress_functions as kf
 import dee_logging as dl # logging functions
 import subprocess # for the _speak function
+
+# Get the directory of the current Python file
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Set this "dbug" variable to 1 to see console output (when run from a CLI).  Set it to 0 to silence superfluous output.
 DBUG = 0 # 1 (True) or 0 (False)
@@ -810,23 +813,20 @@ def main():
 
     dbugprint("Raw commands: " + str(commands), logging_level="INFO")
     
-    for indx in range(len(commands)):
-        command = commands[indx]
+    for indx, command in enumerate(commands):
         if not command:
             continue
 
         dbugprint("==============================")
 
-        # FIRST, check for a sleep command
+        # FIRST, check for a sleep / delay command
         t = unit = None
         # Use the extracted time units in the regex pattern
-        sleep_command = re.search(rf'^(?:wait|sleep|hold)(?: for)? (\w+) ?({TIME_UNITS})?s?$', command)
-        if sleep_command:
+        if sleep_command := re.search(rf'^(?:wait|sleep|hold)(?: for)? (\w+) ?({TIME_UNITS})?s?$', command):
             t = inferNumber(sleep_command.group(1))
             unit  = sleep_command.group(2)
         
-        delay_command = re.search(rf'^(.*) in (\d+) ?({TIME_UNITS})?s?$', command)
-        if delay_command:
+        if delay_command := re.search(rf'^(.*) in (\d+) ?({TIME_UNITS})?s?$', command):
             command = delay_command.group(1)
             t   = int(delay_command.group(2))
             unit    = delay_command.group(3)
@@ -842,18 +842,23 @@ def main():
             dbugprint(f'Text input keyword detected! Typing out text within command "{command}"', logging_level="INFO")
             typeSentences( toSentence(command.split(' ', 1)[1]) )
             continue
+
+        # THIRD, check for a volume command
+        if re.search(r'^(.*?)(volume|sound)(.*)$', command):
+            dbugprint(f'Volume command detected: {command}', logging_level="INFO")
+            subprocess.run(['python', os.path.join(current_dir, 'change_audio_volume.py'), command])
+            continue
         
-        # THIRD, check for Go To command
-        go_to_command = re.search(r'(navigate|go) to (.*)', command) # captures a url or some path
-        if go_to_command:
+        # FOURTH, check for Go To command
+        if go_to_command := re.search(r'(navigate|go) to (.*)', command): # captures a url or some path
             site = go_to_command.group(2).replace(' ', '')
             dbugprint(f"Going to... {site}")
             commands[indx] = f"{go_to_command.group(1)} to {site}"
             COMMANDS_DICT["go to website"](site)
             continue
 
-        multiplier_tuple = getMultiplierFactor(command) # returns tuple (command_wOut_multiplier_string, n) or False
-        if multiplier_tuple:
+        
+        if multiplier_tuple := getMultiplierFactor(command): # returns tuple (command_wOut_multiplier_string, n) or False
             command = multiplier_tuple[0] 
             action_multiplier[indx] = multiplier_tuple[1]
             commands[indx] = multiplier_tuple # Maybe don't?
@@ -873,7 +878,7 @@ def main():
         command = remove_symbols(command)
 
 
-        # FOURTH, see if I can make sense of the command as a literal key invocations (Ex. "windows run")
+        # FIFTH, see if I can make sense of the command as a literal key invocations (Ex. "windows run")
         literal_keys = getLiteralKeyCommands(command)
         if literal_keys:
             commands[indx] = ', '.join(x if isinstance(x, str) else x.name for x in literal_keys)
@@ -881,7 +886,7 @@ def main():
             pressLiteralKeys(literal_keys, action_multiplier[indx])
             continue
         
-        # FIFTH and lastly, if command failed literal translation, try best guess interpretation
+        # SIXTH and lastly, if command failed literal translation, try best guess interpretation
         # also re-inserting newly formatted best guess command back into commands[] array for final debugging output
         commands[indx] = lastDitchAttemptToInterpret(command, action_multiplier[indx])
     

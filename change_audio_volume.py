@@ -4,8 +4,9 @@ import re
 import dee_logging as dl
 
 debugging_on = True
+can_speak = True
 VOL_MAX = 65535
-testing_values = None # "raise the volume by 10 percent"
+testing_values = None # "set volume to 75 quietly" # Set to None to disable testing.
 dl.configureLogging(logFilePath=dl.path.dirname(__file__) + '\\' + __file__.split("\\")[-1].split(".")[0] +'.log', logLevel=dl.logging.INFO)
 
 def dbugprint(string="", end="\n", logging_level="DEBUG"):
@@ -156,10 +157,10 @@ def _getRawVolume(x):
     return x / 100 * VOL_MAX
 
 def _do(func, x=None):
-    if x:
+    if x is not None:
         _validateVolume(x)
-        func(x)
         _unMute()
+        func(x)
     else:
         func()
     exit(0)
@@ -193,7 +194,8 @@ def _setVolume(x):
     _speak(f"Setting volume to {x}")
 
 def _speak(string):
-    system(f'nircmd.exe speak text "{string}"')
+    if can_speak:
+        system(f'nircmd.exe speak text "{string}"')
 
 def main():
     WORDS = testing_values if testing_values else argv[1:]
@@ -215,7 +217,7 @@ def main():
             will_Increase = True
         if word in decrease_words:
             will_Decrease = True
-        if any([True if re.search(x, word) else False for x in mute_words]) or phrase.count("shut up"):
+        if any([True if re.search(rf"\b{x}\b", word) else False for x in mute_words]) or phrase.count("shut up"):
             will_Mute = True
             if phrase.count("toggle"):
                 will_Toggle_Mute = True
@@ -223,6 +225,9 @@ def main():
                 will_Unmute = True
         if word in unmute_words:
             will_Unmute = True
+        if word == 'quietly':
+            global can_speak
+            can_speak = False
 
     dbugprint("Boolean flags summary:\nwill_Increase: "+ str(will_Increase)\
         + "\nwill_Decrease:" + str(will_Decrease)\
@@ -266,7 +271,7 @@ def main():
         elif byPercentage or number >= 10:
             # if # is above 10, assume we're talking about a percentage
             percentage = number
-        elif number > 0:
+        elif number >= 0:
             # if # is in 0-10, assume range is 0-10 (so 3 means 30% like how the smart assistants do)
             percentage = number * 10
         else:
