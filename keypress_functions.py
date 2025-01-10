@@ -260,6 +260,18 @@ def ctrl_alt_del():
 def do_press_spacebar():
     tap(' ')
 
+def do_press_media_volume_mute():
+    tap(Key.media_volume_mute)
+
+def do_press_media_play_pause():
+    tap(Key.media_play_pause)
+
+def do_press_media_next_track():
+    tap(Key.media_next)
+
+def do_press_media_previous_track():
+    tap(Key.media_previous)
+
 def do_press_F():
     tap('f')
 

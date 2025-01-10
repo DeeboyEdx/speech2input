@@ -148,8 +148,11 @@ Please note the following
 
 ### Media
 
-- pause
 - play
+- pause
+- next
+- previous
+- mute
 - full screen (comptible for toggling full screen on most players)
 
 ### Literal
