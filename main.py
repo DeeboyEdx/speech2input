@@ -91,7 +91,6 @@ SPECIAL_KEYS = {
     "page up"     : kf.Key.page_up,
     "print screen": kf.Key.print_screen,
     "scroll lock" : kf.Key.scroll_lock,
-    "mute"        : kf.Key.media_volume_mute,
     "right click" : kf.Key.menu, # doesn't quite fit in this dict but it has to go somewhere
 }
 # joining both dicts and sorting first by number of words, then by word length if previous condition is same
@@ -790,6 +789,8 @@ TIME_CONVERSIONS_TO_S_FROM = {
     'hours'        : lambda x: x * 60 * 60,
     "days"         : lambda x: x * 60 * 60 * 24
 }
+# Extract the time units
+TIME_UNITS = "|".join([key[:-1] for key in TIME_CONVERSIONS_TO_S_FROM.keys()])
 
 def convertToSeconds(t=1, unit="seconds"):
     if not unit.endswith('s'):
@@ -801,9 +802,8 @@ def convertToSeconds(t=1, unit="seconds"):
         return 1
 
 def main():
-    WORDS = argv[1:]
-    if TESTING_VALUE:
-        WORDS = TESTING_VALUE
+    WORDS = TESTING_VALUE if TESTING_VALUE else argv[1:]
+
     # standardizing input: concatenate args into one strings. Designed to receive command(s) either divided into arguments or a single string argument
     phrase = ' '.join(WORDS)
     dbugprint(f"*** | on {dl.getHostname()} | *********************************************************", logging_level="INFO")
@@ -828,8 +828,8 @@ def main():
 
     dbugprint("Raw commands: " + str(commands), logging_level="INFO")
     
-    for i in range(len(commands)):
-        command = commands[i]
+    for indx in range(len(commands)):
+        command = commands[indx]
         if not command:
             continue
 
@@ -837,12 +837,13 @@ def main():
 
         # FIRST, check for a sleep command
         t = unit = None
-        sleep_command = re.search(r'^(?:wait|sleep|hold)(?: for)? (\w+) ?(microsecond|millisecond|second|minute|hour|day)?s?$', command)
+        # Use the extracted time units in the regex pattern
+        sleep_command = re.search(rf'^(?:wait|sleep|hold)(?: for)? (\w+) ?({TIME_UNITS})?s?$', command)
         if sleep_command:
             t = inferNumber(sleep_command.group(1))
             unit  = sleep_command.group(2)
         
-        delay_command = re.search(r'^(.*) in (\d+) ?(microsecond|millisecond|second|minute|hour|day)?s?$', command)
+        delay_command = re.search(rf'^(.*) in (\d+) ?({TIME_UNITS})?s?$', command)
         if delay_command:
             command = delay_command.group(1)
             t   = int(delay_command.group(2))
@@ -865,15 +866,15 @@ def main():
         if go_to_command:
             site = go_to_command.group(2).replace(' ', '')
             dbugprint(f"Going to... {site}")
-            commands[i] = f"{go_to_command.group(1)} to {site}"
+            commands[indx] = f"{go_to_command.group(1)} to {site}"
             COMMANDS_DICT["go to website"](site)
             continue
 
         multiplier_tuple = getMultiplierFactor(command) # returns tuple (command_wOut_multiplier_string, n) or False
         if multiplier_tuple:
             command = multiplier_tuple[0] 
-            action_multiplier[i] = multiplier_tuple[1]
-            commands[i] = multiplier_tuple # Maybe don't?
+            action_multiplier[indx] = multiplier_tuple[1]
+            commands[indx] = multiplier_tuple # Maybe don't?
 
         # FIXME: Currently doesn't work I'm supposing if the calling window is not active (like how I currently have it implemented in Push2Run)
         switch_to_app = re.search(r'^(?:swap|switch|change) (?:app|application|program)?(?:s | )?(?:to )?(.*)', command)
@@ -893,14 +894,14 @@ def main():
         # FOURTH, see if I can make sense of the command as a literal key invocations (Ex. "windows run")
         literal_keys = getLiteralKeyCommands(command)
         if literal_keys:
-            commands[i] = ', '.join(x if isinstance(x, str) else x.name for x in literal_keys)
+            commands[indx] = ', '.join(x if isinstance(x, str) else x.name for x in literal_keys)
             dbugprint(f"Executing: {literal_keys}", logging_level="INFO")
-            pressLiteralKeys(literal_keys, action_multiplier[i])
+            pressLiteralKeys(literal_keys, action_multiplier[indx])
             continue
         
         # FIFTH and lastly, if command failed literal translation, try best guess interpretation
         # also re-inserting newly formatted best guess command back into commands[] array for final debugging output
-        commands[i] = lastDitchAttemptToInterpret(command, action_multiplier[i])
+        commands[indx] = lastDitchAttemptToInterpret(command, action_multiplier[indx])
     
     dbugprint("==============================")
     # Post-execution command interpretation summarization

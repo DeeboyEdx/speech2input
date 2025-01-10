@@ -196,9 +196,8 @@ def _speak(string):
     system(f'nircmd.exe speak text "{string}"')
 
 def main():
-    WORDS = argv[1:]
-    if testing_values:
-        WORDS = testing_values
+    WORDS = testing_values if testing_values else argv[1:]
+
     # standardizing input: concatenate args into one strings. Designed to receive command(s) either divided into arguments or a single string argument
     phrase = ' '.join(WORDS)
     dbugprint(f"*** VOLUME CHANGE *** | on {dl.getHostname()} | ***", logging_level="INFO")
