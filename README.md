@@ -123,8 +123,10 @@ Please note the following
 
 ### Typing
 
-- type a phrase of your choice comma with punctuation exclamation mark
-- type i'll  be there at 6 pm period mark send
+Punctuation marks and new line are supported. Additionally, inputs are generally formatted as a sentence. For example...
+
+- "type a phrase of your choice comma sign with punctuation exclamation mark" -> "A phrase of your choice , with punctuation !"
+- "type i'll  be there at 6 pm period mark send" -> "I'll be there at 6 pm ."
 
 ### Colloquial
 
