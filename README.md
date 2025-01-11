@@ -21,7 +21,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
 - Windows PC
   - [Push2Run](https://www.push2run.com/) application
   - [Python 3.x](https://www.python.org/downloads/) and [pynput](https://pypi.org/project/pynput/) module
-  - [NirCmd](https://www.nirsoft.net/utils/nircmd.html) for audial responses (optional)[^3]
+  - [NirCmd](https://www.nirsoft.net/utils/nircmd.html) for audial responses (optional)[^2]
 - [Pushbullet](https://www.Pushbullet.com/) account
 - A smart home assistant device. These are two compatible options, AFAIK.
   - an Amazon Echo - **recommended**
@@ -30,7 +30,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
     - and an [IFTTT](https://ifttt.com/) account
       - with applicable applet(s)
 > [!NOTE]
-> Due to Google's August 2022 bull**** change, the IFTTT route no longer supports variables or "ingredients[^7]" in its commands so applets must be hard-coded.
+> Due to Google's August 2022 bull**** change, the IFTTT route no longer supports variables or "*ingredients*"[^3] in its commands so applets must be hard-coded.
 
 ## Setup
 1. **Create Pushbullet Account**: Go to [pushbullet.com](https://www.pushbullet.com/).
@@ -112,7 +112,7 @@ Here's how to utilize these project files directly, without relying on Push2Run 
 
 Please note the following considerations.
 
-- You can chain commands together with delimiters "and", and "then".[^6]  For example...
+- You can chain commands together with delimiters "and", and "then".[^5]  For example...
 
   "press windows r **then** type notepad **and** press enter **then** wait 2 seconds **then** press control n **and** type hello world exclamation mark"
 
@@ -126,7 +126,7 @@ Please note the following considerations.
 
 ### Typing
 
-To type out inputs, either use the `-v` at the command-line or start your command with the word `type`. Punctuation marks and new lines are supported. Additionally, inputs are roughly sentence formatted. For example...
+To type out inputs, either use the `-v` flag at the command-line or start your command with the word `type`. Punctuation marks and new lines are supported. Additionally, inputs are roughly sentence formatted. For example...
 
 - "a phrase of your choice comma sign with punctuation exclamation mark" -> "A phrase of your choice , with punctuation !"
 - "type i'll  be there at 6 pm period mark send" -> "I'll be there at 6 pm ." (Enter will be pressed afterwards)
@@ -219,7 +219,7 @@ To type out inputs, either use the `-v` at the command-line or start your comman
 ## Footnotes
 
 [^1]: Aside from the Windows PC and a device with smart home assistant, of course.  These devices are ubiquitous but I recognize accessibility to these devices is not universal.
-[^3]: Currently, audial responses are only used to confirm volume adjustments and to inform the user when a command was not understood.
+[^2]: Currently, audial responses are only used to confirm volume adjustments and to inform the user when a command was not understood.
+[^3]: Fucking stupid name for it.
 [^4]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes, leading to unexpected results.
-[^6]: Actually by default, Push2Run also uses "and" and "then" as a delimiter to separate commands.  Given that the setting may interfere with this project's command-stringing function, you may find it useful to remove the delimiters from Push2Run's settings: File > Options > Separating words.
-[^7]: Fucking stupid name for it.
+[^5]: Actually by default, Push2Run also uses "and" and "then" as a delimiter to separate commands.  Given that the setting may interfere with this project's command-stringing function, you may find it useful to remove the delimiters from Push2Run's settings: File > Options > Separating words.
