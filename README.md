@@ -221,5 +221,5 @@ Please note the following
 [^3]: Currently, audial responses are only used to confirm volume adjustments and to inform the user when a command was not understood.
 [^4]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes, leading to unexpected results.  As you may experience with the Volume cards later.
 [^5]: To execute from console do `python main.py DESIRED COMMAND`.  Use the `-v` argument to avoid interpretation and simply dictate.  `python main.py -v DESIRED SENTENCE HERE`  You may choose to use quotations around your command (`"DESIRED COMMAND"`) if you wish.
-[^6]: Actually by default, Push2Run also uses "and" as a delimiter to separate commands.  Given that setting, I acknowledge that the "Full Screen and Play" card is redundant when you have separate "Full Screen" and "Pause/Play (press Space bar)" cards.
+[^6]: Actually by default, Push2Run also uses "and" and "then" as a delimiter to se qparate commands.  Given that the setting may interfere with this project's and/then function, you may find it useful to remove the delimiters from Push2Run's settings: File > Options > Separating words.
 [^7]: Fucking stupid name for it.
