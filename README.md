@@ -41,7 +41,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
 1. **Install Python and Dependencies**: Install Python 3.x, then the `pynput` module (by executing `pip install pynput` in a command line after installing Python).
   > [!IMPORTANT]
   > It's recommended to select "Add python.exe to PATH". Otherwise, you must use the full python executable path in your Push2Run cards.
-5. **Download Project Files**: Download the project files and place them, **along with NirCmd**, into `C:\Scripts\speech2input\` or a directory of your choosing.
+5. **Download Project Files**: Clone or download the project files, **along with NirCmd**, into `C:\Scripts\speech2input\` or a directory of your choosing.
   > [!NOTE]
   > You may place NirCmd elsewhere but you'll need to add its path to PATH. Alternatively, if executed directly, it'll offer you a button to copy it to your Windows directory.
 6. **Configure Push2Run**: Link Push2Run with your Pushbullet account, and import the `p2r` file or create cards in Push2Run to link voice commands to Python scripts.<details><summary><strong>Instructions</strong></summary>
@@ -58,8 +58,8 @@ All requirements are *FREE*[^1] or free to a certain extent.
 
 |Action|Description|
 |-|-|
-|+ **Type \***            |Bypass command interpretation (uses `-v` flag) to simply type out the supplied text|
-|+ **Computer! Do Things**|Attempts to interpret command as Windows action(s).|
+|**Type \***            |Bypass command interpretation (uses `-v` flag) to simply type out the supplied text|
+|**Computer! Do Things**|Attempts to interpret command as Windows action(s).|
 |**Open \***            |Opens a program.|
 |**Close \***           |Closes a program.|
 |**Voice Typing**       |Opens Microsoft's dictation solution.|
