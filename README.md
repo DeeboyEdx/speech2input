@@ -115,7 +115,7 @@ Please note the following
 - You can chain commands together with delimiters "and", and "then".[^6]
 
 - You can delay commands by saying a wait phrase along with your command. For example...
-  * tell my computer to wait 10 minutes then type i'm still working on it then hit send
+  * tell my computer to push wait 10 minutes then type still working on it and hit send
   * shut down in 5 minutes
 
 - Although Google Assistant will handily detect in your speech when you meant to use punctuation, and I acknowledge it's a mouth-full but to explicitely indicate to the script to produce a punctuation mark, you must say "mark" or "sign" afterwards.  For example: "open curly bracket mark x closed curly bracket sign" -> "{ x }"
