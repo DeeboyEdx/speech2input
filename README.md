@@ -110,16 +110,17 @@ Here's how to utilize these project files directly, without relying on Push2Run 
 
 ## List of viable commands
 
-Please note the following
+Please note the following considerations.
 
-- You can chain commands together with delimiters "and", and "then".[^6]
+- You can chain commands together with delimiters "and", and "then".[^6]  For example...
+  - "press windows r then type notepad and press enter then wait 2 seconds then press control n and type hello world exclamation mark"
+
+- Although Google Assistant will sometimes properly insert punctuation in your speech, you must say "mark" or "sign" after punctuation.  For example...
+  - "typing colon sign open parentheses sign words closed parentheses mark" -> "Typing : ( words )"
 
 - You can delay commands by saying a wait phrase along with your command. For example...
   - wait 10 minutes then type still working on it and hit send
   - press alt f4 in 5 minutes
-
-- Although Google Assistant will sometimes properly insert punctuation in your speech, you must say "mark" or "sign" after punctuation.  For example...
-  - "typing colon sign open parentheses sign words closed parentheses mark" -> "Typing : ( words )"
 
 ### Typing
 
