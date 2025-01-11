@@ -116,7 +116,7 @@ Please note the following
 
 - You can delay commands by saying a wait phrase along with your command. For example...
   - wait 10 minutes then type still working on it and hit send
-  - shut down in 5 minutes
+  - press alt f4 in 5 minutes
 
 - Although Google Assistant will sometimes properly insert punctuation in your speech, you must say "mark" or "sign" after punctuation.  For example...
   - "typing colon sign open parentheses sign words closed parentheses mark" -> "Typing : ( words )"
@@ -201,11 +201,6 @@ Please note the following
 - save screenshot
 - open system menu
 - open control panel
-
-### Misc
-
-- wait 10 seconds and ...
-- type I see you exclamation mark after 3 minutes
 
 ## Caveats, acknowledgements, and known bugs to fix
 
