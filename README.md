@@ -126,7 +126,7 @@ Please note the following
 Punctuation marks and new line are supported. Additionally, inputs are generally formatted as a sentence. For example...
 
 - "type a phrase of your choice comma sign with punctuation exclamation mark" -> "A phrase of your choice , with punctuation !"
-- "type i'll  be there at 6 pm period mark send" -> "I'll be there at 6 pm ."
+- "type i'll  be there at 6 pm period mark send" -> "I'll be there at 6 pm ." (Enter will be pressed afterwards)
 
 ### Colloquial
 
