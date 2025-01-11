@@ -123,9 +123,9 @@ Please note the following
 
 ### Typing
 
-Punctuation marks and new line are supported. Additionally, inputs are generally formatted as a sentence. For example...
+To type out inputs, either use the `-v` flag with the command or start the command with the word `type`. Punctuation marks and new lines are supported. Additionally, inputs are generally formatted as a sentence. For example...
 
-- "type a phrase of your choice comma sign with punctuation exclamation mark" -> "A phrase of your choice , with punctuation !"
+- "a phrase of your choice comma sign with punctuation exclamation mark" -> "A phrase of your choice , with punctuation !"
 - "type i'll  be there at 6 pm period mark send" -> "I'll be there at 6 pm ." (Enter will be pressed afterwards)
 
 ### Colloquial
