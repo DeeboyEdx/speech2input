@@ -222,5 +222,5 @@ To type out inputs, either use the `-v` flag at the command-line or start your c
 [^2]: Currently, audial responses are only used to confirm volume adjustments and to inform the user when a command was not understood.
 [^3]: Fucking stupid name for it.
 [^4]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes, leading to unexpected results.
-[^5]: Actually by default, Push2Run also uses "and" and "then" as a delimiter to separate commands.  Given that the setting may interfere with this project's command-stringing function, you may find it useful to remove the delimiters from Push2Run's settings: File > Options > Separating words.
+[^5]: By default, Push2Run also uses "and" and "then" as a delimiter to separate commands.  Given that the setting may interfere with this project's command-stringing function, you may find it useful to remove or change the delimiters in Push2Run's settings: File > Options > Separating words.
 [^6]: The log file will be saved at the path of the process which executed the python script.
