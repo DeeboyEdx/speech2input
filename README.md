@@ -115,10 +115,11 @@ Please note the following
 - You can chain commands together with delimiters "and", and "then".[^6]
 
 - You can delay commands by saying a wait phrase along with your command. For example...
-  * tell my computer to push wait 10 minutes then type still working on it and hit send
-  * shut down in 5 minutes
+  - wait 10 minutes then type still working on it and hit send
+  - shut down in 5 minutes
 
-- Although Google Assistant will sometimes properly insert punctuation in your speech, you must say "mark" or "sign" after punctuation.  For example: "typing colon sign open parentheses sign words closed parentheses mark" -> "Typing : ( words )"
+- Although Google Assistant will sometimes properly insert punctuation in your speech, you must say "mark" or "sign" after punctuation.  For example...
+  - "typing colon sign open parentheses sign words closed parentheses mark" -> "Typing : ( words )"
 
 ### Typing
 
