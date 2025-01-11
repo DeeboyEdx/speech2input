@@ -56,8 +56,6 @@ All requirements are *FREE*[^1] or free to a certain extent.
 
 <details><summary><strong>Click here for a list of the cards included in the p2r file.</strong></summary>
 
-The first two cards use this project's python script(s). The rest are bonus useful cards.
-
 |Action|Description|
 |-|-|
 |+ **Type \***            |Bypass command interpretation (uses `-v` flag) to simply type out the supplied text|
@@ -69,8 +67,7 @@ The first two cards use this project's python script(s). The rest are bonus usef
 |**Voice Update**       |Opens Windows update.|
 |**No matching phrases**|"*No matching phrases*" is a special catch-all phrase that's triggered when no other card was triggered. Functionality is same as the "*Computer! Do Things*" card.|
 
-> [!NOTE]
-> The plus (+) sign indicates the card uses this project's python script(s).
+The first two cards use this project's python script(s). The rest are bonus useful cards.
 
 </details>
 
