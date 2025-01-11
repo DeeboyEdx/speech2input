@@ -56,6 +56,8 @@ All requirements are *FREE*[^1] or free to a certain extent.
 
 <details><summary><strong>Click here for a list of the cards included in the p2r file.</strong></summary>
 
+The first two cards use this project's python script(s). The rest are bonus useful cards.
+
 |Action|Description|
 |-|-|
 |+ **Type \***            |Bypass command interpretation (uses `-v` flag) to simply type out the supplied text|
@@ -69,6 +71,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
 
 > [!NOTE]
 > The plus (+) sign indicates the card uses this project's python script(s).
+
 </details>
 
 <details><summary>Read an additional Push2Run primer...</summary>
