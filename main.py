@@ -86,6 +86,7 @@ SPECIAL_KEYS = {
     "return"      : kf.Key.enter,
     "new line"    : kf.Key.enter,
     "next line"   : kf.Key.enter,
+    "send"        : kf.Key.enter,
     "number lock" : kf.Key.num_lock,
     "home"        : kf.Key.home,
     "end"         : kf.Key.end,
@@ -525,7 +526,7 @@ def typeSentences(string):
     dbugprint('='*50 + f"\nINPUT: {string}\n")
     ending_key_to_press = []
     ending_keys = {
-        kf.Key.enter : ['enter','return','send', 'new line', 'next line', 'hit send', 'hit return', 'press return'],#, 'hit enter', 'press enter'],
+        kf.Key.enter : ['enter','return','send', 'new line', 'next line', 'hit return', 'press return'],#, 'hit enter', 'press enter'],
         kf.Key.tab   : ['tab', 'next cell']#, 'hit tab', 'press tab']
     }
     strike_keywords = ['hit', 'press']
