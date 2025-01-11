@@ -58,11 +58,13 @@ All requirements are *FREE*[^1] or free to a certain extent.
 
 |Action|Description|
 |-|-|
-|**Pause/Play**|Presses space bar|
-|**Full Screen**|Presses f key|
-|**Full Screen and Play**|Presses f then space bar key|
-|**Type \***|Bypass command interpretation (uses `-v` flag) to simply type out the supplied text|
+|**Type \***            |Bypass command interpretation (uses `-v` flag) to simply type out the supplied text|
 |**Computer! Do Things**|Attempts to interpret command as Windows action(s).|
+|**Open \***            |Opens a program|
+|**Close \***           |Closes a program|
+|**Voice Typing**       |Opens Window's dictation solution.|
+|**Voice Access**       |Opens Window's control solution.|
+|**Voice Update**       |Opens Windows update.|
 |**No matching phrases**|"*No matching phrases*" is a special catch-all phrase that's triggered when no other card was triggered. Functionality is same as the "*Computer! Do Things*" card.|
 
 </details>
