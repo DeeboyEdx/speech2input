@@ -21,7 +21,7 @@ All requirements are *FREE*[^1] or free to a certain extent.
 - Windows PC
   - [Push2Run](https://www.push2run.com/) application
   - [Python 3.x](https://www.python.org/downloads/) and [pynput](https://pypi.org/project/pynput/) module
-  - [NirCmd](https://www.nirsoft.net/utils/nircmd.html) for audial responses (optional)
+  - [NirCmd](https://www.nirsoft.net/utils/nircmd.html) for audial responses (optional)[^3]
 - [Pushbullet](https://www.Pushbullet.com/) account
 - A smart home assistant device. These are two compatible options, AFAIK.
   - an Amazon Echo - **recommended**
@@ -76,7 +76,7 @@ The first two cards use this project's python script(s). The rest are bonus usef
 
 By this point, your digital assistant should understand a certain invocation phrase to indicate to forward commands through your Pushbullet service which is then captured by Push2Run. There are a couple points to learn about Push2Run if you want to best harness it's power. In the following example scenarios, we'll use the invocation phrase "*tell my computer to* ~", the default for the Amazon Echo route, and which most colloquially makes sense.
 
-- `$` represents your variable.  For example, let's say you've setup your Type card just like in the `p2r` file, with "type $" as one of the 'Listen for' entries[^4] and `main.py -v "$"` in the parameters field.
+- `$` represents your variable input.  For example, let's say you've setup your Type card just like in the `p2r` file, with "type $" as one of the 'Listen for' entries[^4] and `main.py -v "$"` in the parameters field.
 
     You say: "*tell my computer to* **type** it is a lovely day period mark"
 
@@ -113,9 +113,10 @@ Here's how to utilize these project files directly, without relying on Push2Run 
 Please note the following
 
 - You can chain commands together with delimiters "and", and "then".[^6]
-<!-- Actually this isn't working now.  Gotta debug.
-* You can also delay commands with "wait|sleep|hold x seconds|minutes|hours".
-  * Ex. `tell my computer to wait 30 seconds then press start button`-->
+
+- You can delay commands by saying a wait phrase along with your command. For example...
+  * tell my computer to wait 10 minutes then type i'm still working on it then hit send
+  * shut down in 5 minutes
 
 - Although Google Assistant will handily detect in your speech when you meant to use punctuation, and I acknowledge it's a mouth-full but to explicitely indicate to the script to produce a punctuation mark, you must say "mark" or "sign" afterwards.  For example: "open curly bracket mark x closed curly bracket sign" -> "{ x }"
 
@@ -217,9 +218,7 @@ Please note the following
 ## Footnotes
 
 [^1]: Aside from the Windows PC and a device with smart home assistant, of course.  These devices are ubiquitous but I recognize accessibility to these devices is not universal.
-[^2]: Download and extract to a location in your PATH environmental variable OR this project's root folder.
 [^3]: Currently, audial responses are only used to confirm volume adjustments and to inform the user when a command was not understood.
-[^4]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes, leading to unexpected results.  As you may experience with the Volume cards later.
-[^5]: To execute from console do `python main.py DESIRED COMMAND`.  Use the `-v` argument to avoid interpretation and simply dictate.  `python main.py -v DESIRED SENTENCE HERE`  You may choose to use quotations around your command (`"DESIRED COMMAND"`) if you wish.
+[^4]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes, leading to unexpected results.
 [^6]: Actually by default, Push2Run also uses "and" and "then" as a delimiter to se qparate commands.  Given that the setting may interfere with this project's and/then function, you may find it useful to remove the delimiters from Push2Run's settings: File > Options > Separating words.
 [^7]: Fucking stupid name for it.
