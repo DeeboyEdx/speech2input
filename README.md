@@ -16,7 +16,7 @@ This project originated from a simple desire to dictate to my computer, evolving
 
 ## Prerequisites
 
-All requirements are *FREE*[^1] or free to a [certain extent](#free-really).
+All requirements are *FREE*[^1] or [free to a certain extent](#free-really).
 
 - Windows PC
   - [Push2Run](https://www.push2run.com/) application
