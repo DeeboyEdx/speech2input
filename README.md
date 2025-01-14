@@ -8,15 +8,15 @@ Convert spoken commands into typed text or actions on your Windows computer by i
 
 ## Project description
 
-This project allows you to convert spoken commands from smart devices, like Amazon Echo and Google Assistant, into typed text or executable actions on your Windows computer. By integrating various software and services such as Push2Run, Pushbullet, and Python scripts, you can control your PC using voice commands.
+This project allows you to convert spoken commands from smart devices, like Amazon Echo and Google Assistant, into typed text or actions on your Windows computer. We achieve this by integrating these project files with a chain of services and software, as detailed below.
 
 ### Background
 
-This project originated from a simple desire to dictate to my computer, evolving into a quest for voice command functionality akin to my experience with an Android phone. While this project may not rival other solutions such as [Microsoft's voice access](https://support.microsoft.com/topic/get-started-with-voice-access-bd2aa2dc-46c2-486c-93ae-3d75f7d053a4), my approach is open source, highly customaizable, and enables remote control from your smart devices. So, it offers for some a more valuable experience.
+This project originated from a simple desire to dictate to my computer, evolving into a quest for voice command functionality akin to that on an Android phone. While there are several other similar solutions out there, such as [Microsoft's voice access](https://support.microsoft.com/topic/get-started-with-voice-access-bd2aa2dc-46c2-486c-93ae-3d75f7d053a4), the approach detailed here is light weight, open source, highly customizable, and enables remote control from your smart devices.
 
 ## Prerequisites
 
-All requirements are *FREE*[^1] or free to a certain extent.
+All requirements are *FREE*[^1] or free to a certain extent[^7].
 
 - Windows PC
   - [Push2Run](https://www.push2run.com/) application
@@ -157,7 +157,7 @@ To type out inputs, either use the `-v` flag at the command-line or start your c
 - pause
 - next
 - previous
-- full screen (comptible for toggling full screen on most players)
+- full screen (compatible for toggling full screen on most players)
 
 ### Literal
 
@@ -209,7 +209,7 @@ To type out inputs, either use the `-v` flag at the command-line or start your c
 
 ## Caveats, acknowledgements, and known bugs to fix
 
-- [ ] *An internet connection is required for your computer to recieve commands.*
+- [ ] *An internet connection is required for your computer to receive commands.*
 - [ ] *You must be logged into your computer for most, if not all, actions to succeed.*
 - [ ] A digital assistant's attention span is short. So, commands must be swift and to the point.
   - [ ] As such, performing multiple or complex actions utilizing this project may prove difficult. To alleviates this pressure, the Alexa method introduced a follow-up mode.
@@ -224,3 +224,12 @@ To type out inputs, either use the `-v` flag at the command-line or start your c
 [^4]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes, leading to unexpected results.
 [^5]: By default, Push2Run also uses "and" and "then" as a delimiter to separate commands.  Given that the setting may interfere with this project's command-stringing function, you may find it useful to remove or change the delimiters in Push2Run's settings: File > Options > Separating words.
 [^6]: The log file will be saved at the path of the process which executed the python script.
+[^7] The following are what's currently known about the Free capacity of each service/software.
+  | Software / Service | Details|
+  |-------------|---------------|
+  |Amazon Alexa | No known limitations |
+  |PC Commander | Free 150 pushes a month. |
+  |Pushbullet   | Free 500 API calls (ie. pushes) a month. |
+  |Push2Run     | Free with no limitations |
+  |Python       | Free |
+  |Speech2Input | Free |
