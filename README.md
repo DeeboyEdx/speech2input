@@ -38,19 +38,20 @@ Follow these steps to build the data chain that will take your voice commands fr
 
 1. **Create Pushbullet Account**: Go to [pushbullet.com](https://www.pushbullet.com/).
 1. **Install Push2Run**: Download and install the [Push2Run](https://www.push2run.com/) application on your Windows PC.
-1. **Set Up Smart Device**: Connect your smart device to Pushbullet.
+1. **Set Up Smart Device**: Connect your smart device to Pushbullet.<details><summary><strong>Instructions</strong></summary>
     - **Amazon Echo**: Use the [PC Commander skill](https://www.amazon.com/dp/B0DFRQYYC3/) for integration.
     - **Google Assistant**: Use [IFTTT](https://ifttt.com/) to link Google Assistant with Pushbullet.
+    </details>
 1. **Install Python and Dependencies**: Install Python 3.x, then the `pynput` module (by executing `pip install pynput` in a command line after installing Python).
   > [!IMPORTANT]
   > It's recommended to select "**Add python.exe to PATH**". Otherwise, you must use the full python executable path in your Push2Run cards.
 5. **Download Project Files**: Clone or download the project files, **along with NirCmd**, into `C:\Scripts\speech2input\` or a directory of your choosing.
   > [!TIP]
   > If executed directly, Nircmd will offer you a button to copy it to your Windows directory. Alternatively, you may place NirCmd elsewhere but you'll need to add its path to PATH.
-6. **Configure Push2Run**: Link Push2Run with your Pushbullet account, and import the `p2r` file or create cards in Push2Run to link voice commands to Python scripts.<!-- <details><summary><strong>Instructions</strong></summary> -->
+6. **Configure Push2Run**: Link Push2Run with your Pushbullet account, and import the `p2r` file or create cards in Push2Run to link voice commands to Python scripts.<details><summary><strong>Instructions</strong></summary>
     - for **Amazon Echo** route: https://pccommander.net/howto/push2run/  
     - for **Google Assistant** route: https://github.com/roblatour/Push2Run/blob/main/help/setup_Google_IFTTT_Pushbullet.md
-    <!-- </details> -->
+    </details>
 
 > [!WARNING]
 > If you chose a custom project directory and wish to import the `p2r` file, update the path of each entry's *Parameter* field to the directory you chose. This can be done either before importing with a text editor, or after importing within Push2Run's GUI.
