@@ -228,8 +228,8 @@ Basically yes! Unless you're a super user. The following are what's currently kn
   |IFTTT               | Limited to two (2), static applets |
   |Pushbullet          | Free 500 API calls (ie. pushes) a month |
   |Push2Run            | Free with no limitations |
-  |Python              | Free |
-  |Speech2Input        | Free |
+  |Python              | Free with no limitations |
+  |Speech2Input        | Free with no limitations |
 
 ## Footnotes
 
