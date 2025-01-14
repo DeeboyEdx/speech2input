@@ -223,7 +223,7 @@ Basically yes! Unless you're a super user. The following are what's currently kn
   | Software / Service | Details|
   |--------------------|--------|
   |Amazon Alexa        | No known limitations |
-  |PC Commander        | Free 150 pushes a month. Subject to change, soon. Subscribe now to get grandfathered in. |
+  |PC Commander        | Free 150 pushes a month. Subject to change, soon. Subscribe now to be grandfathered in!! |
   |Google Assistant    | No known limitations |
   |IFTTT               | Limited to two (2), static applets |
   |Pushbullet          | Free 500 API calls (ie. pushes) a month |
