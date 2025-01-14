@@ -223,7 +223,7 @@ Basically yes! Unless you're a super user. The following are what's currently kn
   | Software / Service | Details|
   |--------------------|--------|
   |Amazon Alexa        | No known limitations |
-  |PC Commander        | Free 150 pushes a month. Subject to change, soon. Subscribe now to be grandfathered in!! |
+  |PC Commander        | Free 150 pushes a month.[^7] Subject to change, soon. Subscribe now to be grandfathered in!! |
   |Google Assistant    | No known limitations |
   |IFTTT               | Limited to two (2), static applets |
   |Pushbullet          | Free 500 API calls (ie. pushes) a month |
@@ -239,3 +239,4 @@ Basically yes! Unless you're a super user. The following are what's currently kn
 [^4]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes, leading to unexpected results.
 [^5]: By default, Push2Run also uses "and" and "then" as a delimiter to separate commands.  Given that the setting may interfere with this project's command-stringing function, you may find it useful to remove or change the delimiters in Push2Run's settings: File > Options > Separating words.
 [^6]: The log file will be saved at the path of the process which executed the python script.
+[^7]: Subject to Pushbullet API call limit. That is, PC Commander doesn't grant you additional pushes and must adhere to the limits specified by Pushbullet.
