@@ -40,7 +40,7 @@ All requirements are *FREE*[^1] or [free to a certain extent](#free-really).
     - **Google Assistant**: Use [IFTTT](https://ifttt.com/) to link Google Assistant with Pushbullet.
 1. **Install Python and Dependencies**: Install Python 3.x, then the `pynput` module (by executing `pip install pynput` in a command line after installing Python).
   > [!IMPORTANT]
-  > It's recommended to select "Add python.exe to PATH". Otherwise, you must use the full python executable path in your Push2Run cards.
+  > It's recommended to select "**Add python.exe to PATH**". Otherwise, you must use the full python executable path in your Push2Run cards.
 5. **Download Project Files**: Clone or download the project files, **along with NirCmd**, into `C:\Scripts\speech2input\` or a directory of your choosing.
   > [!NOTE]
   > You may place NirCmd elsewhere but you'll need to add its path to PATH. Alternatively, if executed directly, it'll offer you a button to copy it to your Windows directory.
