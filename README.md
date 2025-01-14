@@ -33,6 +33,9 @@ All requirements are *FREE*[^1] or [free to a certain extent](#free-really).
 > Due to Google's August 2022 bull**** change, the IFTTT route no longer supports variables or "*ingredients*"[^3] in its commands so applets must be hard-coded.
 
 ## Setup
+
+Follow these steps to build the data chain that will take your voice commands from your smart assistant, all the way to your computer and feed it to this project's Speech2Input scripts.
+
 1. **Create Pushbullet Account**: Go to [pushbullet.com](https://www.pushbullet.com/).
 1. **Install Push2Run**: Download and install the [Push2Run](https://www.push2run.com/) application on your Windows PC.
 1. **Set Up Smart Device**: Connect your smart device to Pushbullet.
