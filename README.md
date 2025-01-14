@@ -16,7 +16,7 @@ This project originated from a simple desire to dictate to my computer, evolving
 
 ## Prerequisites
 
-All requirements are *FREE*[^1] or free to a certain extent[^7].
+All requirements are *FREE*[^1] or free to a [certain extent](#free-really).
 
 - Windows PC
   - [Push2Run](https://www.push2run.com/) application
@@ -216,6 +216,21 @@ To type out inputs, either use the `-v` flag at the command-line or start your c
 - [ ] Giving literal key-press commands can be tricky to near impossible as it is wholly dependent on what the digital assistant *thinks* it heard. With their tendency to listen for natural spoken language, they can mishear. For example, it may hear "end" when you say "n". This project attempts to mitigate misheard literal key-press commands with an equivalency dictionary, but it isn't perfect.
 - [ ] Log file location may differ depending on whether the script is executed from the console[^6] or by Push2Run.
 
+## FREE? Really?
+
+Basically yes! Unless you're a super user. The following are what's currently known about the Free capacity of each service/software in regard to the scope of this project.
+
+  | Software / Service | Details|
+  |--------------------|--------|
+  |Amazon Alexa        | No known limitations |
+  |PC Commander        | Free 150 pushes a month. Subject to change, soon. Subscribe now to get grandfathered in. |
+  |Google Assistant    | No known limitations |
+  |IFTTT               | Limited to two (2), static applets |
+  |Pushbullet          | Free 500 API calls (ie. pushes) a month |
+  |Push2Run            | Free with no limitations |
+  |Python              | Free |
+  |Speech2Input        | Free |
+
 ## Footnotes
 
 [^1]: Aside from a Windows PC and a device with smart home assistant, of course.  These devices are ubiquitous but I recognize accessibility to these devices is not universal.
@@ -224,12 +239,3 @@ To type out inputs, either use the `-v` flag at the command-line or start your c
 [^4]: You can list multiple "Listen for" phrases.  Be sparing here as the more variability you add, the greater your chances of stepping on another card's toes, leading to unexpected results.
 [^5]: By default, Push2Run also uses "and" and "then" as a delimiter to separate commands.  Given that the setting may interfere with this project's command-stringing function, you may find it useful to remove or change the delimiters in Push2Run's settings: File > Options > Separating words.
 [^6]: The log file will be saved at the path of the process which executed the python script.
-[^7] The following are what's currently known about the Free capacity of each service/software.
-  | Software / Service | Details|
-  |-------------|---------------|
-  |Amazon Alexa | No known limitations |
-  |PC Commander | Free 150 pushes a month. |
-  |Pushbullet   | Free 500 API calls (ie. pushes) a month. |
-  |Push2Run     | Free with no limitations |
-  |Python       | Free |
-  |Speech2Input | Free |
