@@ -227,9 +227,9 @@ Basically yes! Unless you're a super user. The following are what's currently kn
   |Google Assistant    | No known limitations |
   |IFTTT               | Limited to two (2), static applets |
   |Pushbullet          | Free 500 API calls (ie. pushes) a month |
-  |Push2Run            | Free with no limitations |
-  |Python              | Free with no limitations |
-  |Speech2Input        | Free with no limitations |
+  |Push2Run            | Free |
+  |Python              | Free |
+  |Speech2Input        | Free |
 
 ## Footnotes
 
