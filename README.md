@@ -37,7 +37,7 @@ All requirements are *FREE*[^1] or [free to a certain extent](#free-really).
 Follow these steps to build the data chain that will take your voice commands from your smart assistant, all the way to your computer and feed it to this project's Speech2Input scripts.
 
 1. **Create Pushbullet Account**: At [pushbullet.com](https://www.pushbullet.com/)
-1. **Set Up Smart Device**: Connect your smart device to Pushbullet.<details><summary><strong>Instructions</strong></summary>
+1. **Set Up Smart Device**: Connect your smart device to the Pushbullet service.<details><summary><strong>Instructions</strong></summary>
     - **Amazon Echo**: Use the [PC Commander skill](https://www.amazon.com/dp/B0DFRQYYC3/) for integration.
     - **Google Assistant**: Use [IFTTT](https://ifttt.com/) to link Google Assistant with Pushbullet.
     </details>
