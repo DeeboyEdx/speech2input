@@ -39,7 +39,7 @@ Follow these steps to build the data chain that will take your voice commands fr
 1. **Create Pushbullet Account**: At [pushbullet.com](https://www.pushbullet.com/)
 1. **Set Up Smart Device**: Connect your smart device to the Pushbullet service.<details><summary><strong>Instructions</strong></summary>
     - **Amazon Echo**: Use the [PC Commander skill](https://www.amazon.com/dp/B0DFRQYYC3/) for integration.
-    - **Google Assistant**: Use [IFTTT](https://ifttt.com/) to link Google Assistant with Pushbullet using [these instructions](https://github.com/roblatour/Push2Run/blob/main/help/setup_Google_IFTTT_Pushbullet.md).
+    - **Google Assistant**: Use [IFTTT](https://ifttt.com/) to link Google Assistant with Pushbullet using [these instructions](https://github.com/roblatour/Push2Run/blob/main/help/setup_Google_IFTTT_Pushbullet.md#:~:text=8.-,Sign%20onto%20IFTTT,-Notes%3A%0A%0Aa).
     </details>
 1. **Install Push2Run**: Download and install the [Push2Run](https://www.push2run.com/) application on your Windows PC.
 1. **Configure Push2Run**: Link Push2Run with your Pushbullet account, and import the `p2r` file or create cards in Push2Run to link voice commands to Python scripts.<details><summary><strong>Instructions</strong></summary>
