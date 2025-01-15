@@ -29,8 +29,6 @@ All requirements are *FREE*[^1] or [free to a certain extent](#free-really).
   - a Google Assistant device
     - and an [IFTTT](https://ifttt.com/) account
       - with applicable applet(s)
-> [!NOTE]
-> Due to Google's August 2022 bull**** change, the IFTTT route no longer supports variables or "*ingredients*"[^3] in its commands so applets must be hard-coded.
 
 ## Setup
 
@@ -41,13 +39,15 @@ Follow these steps to build the data chain that will take your voice commands fr
     - **Amazon Echo**: Use the [PC Commander skill](https://www.amazon.com/dp/B0DFRQYYC3/) for integration.
     - **Google Assistant**: Use [IFTTT](https://ifttt.com/) to link Google Assistant with Pushbullet using [these instructions](https://github.com/roblatour/Push2Run/blob/main/help/setup_Google_IFTTT_Pushbullet.md#:~:text=8.-,Sign%20onto%20IFTTT,-Notes%3A%0A%0Aa).
     </details>
+> [!NOTE]
+> Due to Google's August 2022 bull**** change, the IFTTT route no longer supports variables or "*ingredients*"[^3] in its commands so applets must be hard-coded.
 1. **Install Push2Run**: Download and install the [Push2Run](https://www.push2run.com/) application on your Windows PC.
 1. **Configure Push2Run**: Link Push2Run with your Pushbullet account, and import the `p2r` file or create cards in Push2Run to link voice commands to Python scripts.<details><summary><strong>Instructions</strong></summary>
     - for **Amazon Echo** route: https://pccommander.net/howto/push2run/  
     - for **Google Assistant** route: https://github.com/roblatour/Push2Run/blob/main/help/setup_Google_IFTTT_Pushbullet.md
+    </details>
 > [!WARNING]
 > If you chose a custom project directory and wish to import the `p2r` file, update the path of each entry's *Parameter* field to the directory you chose. This can be done either before importing with a text editor, or after importing within Push2Run's GUI.
-    </details>
 5. **Install Python and Dependencies**: Install Python 3.x, then the `pynput` module (by executing `pip install pynput` in a command line after installing Python).
   > [!IMPORTANT]
   > It's recommended to select "**Add python.exe to PATH**". Otherwise, you must use the full python executable path in your Push2Run cards.
