@@ -41,7 +41,7 @@ Follow these steps to build the data chain that will take your voice commands fr
     </details>
 > [!NOTE]
 > Due to Google's August 2022 bull**** change, the IFTTT route no longer supports variables or "*ingredients*"[^3] in its commands so applets must be hard-coded.
-1. **Install Push2Run**: Download and install the [Push2Run](https://www.push2run.com/) application on your Windows PC.
+3. **Install Push2Run**: Download and install the [Push2Run](https://www.push2run.com/) application on your Windows PC.
 1. **Configure Push2Run**: Link Push2Run with your Pushbullet account, and import the `p2r` file or create cards in Push2Run to link voice commands to Python scripts.<details><summary><strong>Instructions</strong></summary>
     - for **Amazon Echo** route: https://pccommander.net/howto/push2run/  
     - for **Google Assistant** route: https://github.com/roblatour/Push2Run/blob/main/help/setup_Google_IFTTT_Pushbullet.md
