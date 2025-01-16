@@ -221,7 +221,7 @@ To type out inputs, either use the `-v` flag at the command-line or start your c
 
 ## FREE? Really?
 
-Basically yes! Unless you're a super user. The following are what's currently known about the Free capacity of each service/software in regard to the scope of this project.
+Basically yes! Unless possibly if you're a super user. The following are what's currently known about the Free capacity of each service/software in regard to the scope of this project.
 
   | Software / Service | Details|
   |--------------------|--------|
