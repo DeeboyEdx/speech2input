@@ -108,7 +108,7 @@ Here's how these project files can be used. There are two primary ways. Either..
 
   `python main.py [<command>...]`
 
-> [!TIP]
+> [!NOTE]
 > These commands will execute immediately so if you wish to type on or control a particular application, you will need to either execute the command in a hidden window or use a delay timer.
 
 ## List of viable commands
