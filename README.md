@@ -8,7 +8,7 @@ Convert spoken commands into actions or typed text on your Windows computer by i
 
 ## Project description
 
-This project allows you to convert spoken commands from smart devices, like Amazon Echo and Google Assistant, into actions or typed text on your Windows computer. We achieve this by integrating these project files with a chain of services and software, as detailed below.
+This project is the last leg of a system that allows you to convert spoken commands from smart devices, like Amazon Echo and Google Assistant, into actions or typed text on your Windows computer. We achieve this by integrating these project files with a chain of services and software, as detailed below.
 
 ### Background
 
