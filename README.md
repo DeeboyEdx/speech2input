@@ -12,7 +12,7 @@ This project is the last leg of a system that allows you to convert spoken comma
 
 ### Background
 
-This project originated from a simple desire to dictate to my computer, evolving into a quest for voice command functionality akin to that on an Android phone. While there are several other similar solutions out there, such as [Microsoft's voice access](https://support.microsoft.com/topic/get-started-with-voice-access-bd2aa2dc-46c2-486c-93ae-3d75f7d053a4), the approach detailed here is light weight, open source, highly customizable, and enables remote control from your smart devices.
+This project originated from a simple desire to dictate to my computer, evolving into a quest for voice command functionality akin to that on an Android phone. While there are several other solutions out there, such as [Microsoft's voice access](https://support.microsoft.com/topic/get-started-with-voice-access-bd2aa2dc-46c2-486c-93ae-3d75f7d053a4), the approach detailed here is light weight, open source, highly customizable, and enables remote control from your smart devices.
 
 ## Prerequisites
 
@@ -66,7 +66,7 @@ Follow these steps to build the data chain that will take your voice commands fr
 |**Open \***            |Opens a program.|
 |**Close \***           |Closes a program.|
 |**Voice Typing**       |Opens Microsoft's dictation solution.|
-|**Voice Access**       |Opens Microsoft's control solution.|
+|**Voice Access**       |Opens Microsoft's voice control solution.|
 |**Voice Update**       |Opens Windows update.|
 |**No matching phrases**|"*No matching phrases*" is a special catch-all phrase that's triggered when no other card was triggered. Functionality is same as the "*Computer! Do Things*" card.|
 
@@ -96,15 +96,15 @@ By this point, your digital assistant should understand a certain invocation phr
 </p>
 </details>
 
-## How to use directly
+## How to execute python scripts
 
-Here's how to utilize these project files directly, without relying on Push2Run triggers.
+Here's how these project files can be used. There are two primary ways. Either...
 
-- To type out a string to your computer with basic formatting use...
+- A) Type out a string to your computer with basic formatting. Or...
 
   `python main.py -v [<string>...]`
 
-- To give your computer a command ([see supported commands](#list-of-viable-commands)) use...
+- B) Have the scripts try to interpret your command to your computer. See([supported commands](#list-of-viable-commands)).
 
   `python main.py [<command>...]`
 
