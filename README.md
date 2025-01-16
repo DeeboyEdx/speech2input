@@ -100,7 +100,7 @@ By this point, your digital assistant should understand a certain invocation phr
 
 Here's how these project files can be used. There are two primary ways. Either...
 
-- A) Type out a string to your computer with basic formatting. Or...
+- A) Type out a string to your computer with basic formatting.
 
   `python main.py -v [<string>...]`
 
