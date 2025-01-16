@@ -104,7 +104,7 @@ Here's how these project files can be used. There are two primary ways. Either..
 
   `python main.py -v [<string>...]`
 
-- B) Have the scripts try to interpret your command to your computer. See([supported commands](#list-of-viable-commands)).
+- B) Or have the scripts try to interpret your command to your computer. See([supported commands](#list-of-viable-commands)).
 
   `python main.py [<command>...]`
 
