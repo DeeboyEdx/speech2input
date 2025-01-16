@@ -228,7 +228,7 @@ Basically yes! Unless possibly if you're a super user. The following are what's 
   |Amazon Alexa        | No known limitations |
   |PC Commander        | Free 150 pushes a month.[^7] Subject to change, soon. Subscribe now to be grandfathered in!! |
   |Google Assistant    | No known limitations |
-  |IFTTT               | Free account limited to two (2), static applets |
+  |IFTTT               | Free account limited to two (2) static applets |
   |Pushbullet          | Free 500 API calls (ie. pushes) a month |
   |Push2Run            | Free |
   |Python              | Free |
